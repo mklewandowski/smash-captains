@@ -247,7 +247,7 @@ public class SceneManager : MonoBehaviour
         Globals.ScrollSpeed = new Vector2(0, 0);
         HUDRaceComplete.SetActive(true);
         HUDRaceComplete.GetComponent<GrowAndShrink>().StartEffect();
-        if (Globals.CurrentTime < Globals.BestTime)
+        if (Globals.CurrentTime < Globals.BestTime || Globals.BestTime == 0f)
         {
             Globals.BestTime = Globals.CurrentTime;
             Globals.SaveFloatToPlayerPrefs(Globals.BestTimePlayerPrefsKey, Globals.BestTime);
