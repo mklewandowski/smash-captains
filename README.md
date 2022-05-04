@@ -1,8 +1,10 @@
 # Smash Captains
-Smash Captains is a biplane-themed race game. It's filled with inspirations ranging from classic console games like Barnstorming and Looping to modern casual mobile games like Crossy Road. Ultimately I wanted to make a game that was designed for speedrunning and that used a voxel art visual style (so I could get my hands dirty with Magicavoxel and make something in 3D). I landed on Smash Captains after binging speedrun videos of Barnstorming on the Atari 2600. I wanted to do something similar but in a modern voxel style.
+Smash Captains is a biplane-themed race game filled with inspirations ranging from classic console games like Steve Cartwright's [Barnstorming](https://en.wikipedia.org/wiki/Barnstorming_(video_game)) on the Atari 2600 and [Looping](https://en.wikipedia.org/wiki/Looping_(video_game)) on the ColecoVision to modern casual mobile games like Crossy Road. I landed on the design for Smash Captains after binging [Summoning Salt](https://www.youtube.com/c/SummoningSalt)'s speedrun videos and reading about the strange story behind [Todd Rogers](https://en.wikipedia.org/wiki/Todd_Rogers_(gamer))'s alleged Barnstorming highsore. I wanted to make a game that was designed for speedrunning, had a retro influenced style, but felt firmly modern in some ways. I had been tinkering with voxel art visuals for a while and was eager to make something using Magicavoxel and in 3D. The result of all of this was Smash Captains, a colorful voxel art speedrun game.
 
 ## Gameplay
 Press the screen or hold space to give your wobbly plane thrust as you race to the finish line. Avoid obstacles and grab power-ups along the way.
+
+![Smash Captains gameplay](https://github.com/mklewandowski/smash-captains/blob/main/Assets/Images/smash-captains-gameplay.gif?raw=true)
 
 ## Supported Platforms
 Smash Captains is designed for use on multiple platforms including:
@@ -11,7 +13,7 @@ Smash Captains is designed for use on multiple platforms including:
 - Web
 - Mac and PC standalone builds
 
-## Running locally
+## Running Locally
 Use the following steps to run locally:
 1. Clone this repo
 2. Open repo folder using Unity 2020.3.10f.1
