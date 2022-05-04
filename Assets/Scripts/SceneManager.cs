@@ -64,10 +64,10 @@ public class SceneManager : MonoBehaviour
 	GameObject EnemyPrefab;
     [SerializeField]
 	GameObject PowerupPrefab;
+    [SerializeField]
+    GameObject WallPrefab;
 
-    float finishLineXPos = 100f;
-    float powerupTimer = 3f;
-    float enemyTimer = 5;
+    float finishLineXPos = 800f;
 
     void Awake()
     {
@@ -144,19 +144,6 @@ public class SceneManager : MonoBehaviour
         float decTimePart = (int)(Globals.CurrentTime * 100f % 100);
         HUDTimeDec.text = (decTimePart < 10 ? "0" : "") + decTimePart.ToString();
 
-        enemyTimer -= Time.deltaTime;
-        if (enemyTimer <= 0)
-        {
-            GameObject enemy = (GameObject)Instantiate(EnemyPrefab, new Vector3(15f, Random.Range(-3.5f, 2.5f), 3f), Quaternion.identity);
-            enemyTimer = Random.Range(3f, 5f);
-        }
-        powerupTimer -= Time.deltaTime;
-        if (powerupTimer <= 0)
-        {
-            GameObject powerup = (GameObject)Instantiate(PowerupPrefab, new Vector3(15f, Random.Range(-3.5f, 3f), 3f), Quaternion.identity);
-            powerupTimer = Random.Range(2f, 4f);
-        }
-
         float cloudMinX = -15f;
         for (int i = 0; i < Clouds.Length; i++)
         {
@@ -231,15 +218,60 @@ public class SceneManager : MonoBehaviour
         HUDTime.SetActive(true);
         HUDSpeed.SetActive(true);
 
-        powerupTimer = 3f;
-        enemyTimer = 5;
-
-        FinishLine.transform.localPosition = new Vector3(finishLineXPos, FinishLine.transform.localPosition.y, FinishLine.transform.localPosition.z);
+        CreateCourse();
 
         HUDRaceReady.SetActive(true);
         HUDRaceReady.GetComponent<GrowAndShrink>().StartEffect();
 
         Globals.CurrentGameState = Globals.GameState.Ready;
+    }
+
+    public void CreateCourse()
+    {
+        FinishLine.transform.localPosition = new Vector3(finishLineXPos, FinishLine.transform.localPosition.y, FinishLine.transform.localPosition.z);
+
+        int startOffset = 14;
+        int endOffset = 8;
+        int wallToAdd = 0;
+        float wallYPos = 0f;
+        for (int x = 0; x < finishLineXPos; x++)
+        {
+            if (x > startOffset && x < (finishLineXPos - endOffset))
+            {
+                if (x % 2 == 0 && wallToAdd > 0)
+                {
+                    // add a wall
+                    GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, 3f), Quaternion.identity);
+                    wall.transform.localEulerAngles = new Vector3(0f, 240f, 0f);
+                    wallToAdd--;
+                }
+                else if (x % 4 == 0)
+                {
+                    // add nothing, a wall, an enemy, a powerup, or a robot
+                    float randomVal = Random.Range(0f, 100.0f);
+                    if (randomVal < 30f)
+                    {
+                        // powerup
+                        GameObject powerup = (GameObject)Instantiate(PowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), 3f), Quaternion.identity);
+                    }
+                    else if (randomVal < 55f)
+                    {
+                        // robot
+                        GameObject enemy = (GameObject)Instantiate(EnemyPrefab, new Vector3(x, Random.Range(-2.4f, 2.6f), 3f), Quaternion.identity);
+                    }
+                   else if (randomVal < 80f)
+                    {
+                        // wall
+                        wallYPos = Random.Range(0f, 100.0f) > 50f ? -2.8f : 3.7f;
+                        wallToAdd = Random.Range(0, 4);
+                        GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, 3f), Quaternion.identity);
+                        wall.transform.localEulerAngles = new Vector3(0f, 240f, 0f);
+                    }
+                }
+            }
+        }
+
+
     }
 
     public void EndGame()

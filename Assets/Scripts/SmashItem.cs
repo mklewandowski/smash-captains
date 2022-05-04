@@ -5,6 +5,7 @@ public class SmashItem : MonoBehaviour
 	public enum ItemTypes {
 		Coin,
 		Robot,
+        Wall
 	}
 	public ItemTypes itemType = ItemTypes.Coin;
 	protected Color debrisColor;
@@ -27,6 +28,10 @@ public class SmashItem : MonoBehaviour
         else if (itemType == ItemTypes.Robot)
         {
 			debrisColor = Color.gray;
+		}
+        else if (itemType == ItemTypes.Wall)
+        {
+			debrisColor = Color.red;
 		}
 
         GameObject dm = GameObject.Find ("DebrisManager");

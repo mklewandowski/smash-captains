@@ -13317,6 +13317,7 @@ MonoBehaviour:
   HUDBestTime: {fileID: 1056600321}
   EnemyPrefab: {fileID: 3810516749534826504, guid: dff974689a256e64b9a8d9b8dbe5aaf9, type: 3}
   PowerupPrefab: {fileID: 4686870976252009369, guid: 34ccafa858c44a54ebd6d75235eeb1d3, type: 3}
+  WallPrefab: {fileID: 7847306169924107501, guid: a8ee8f0c8f440a74ab1622902d9aa2d4, type: 3}
 --- !u!114 &1786826858
 MonoBehaviour:
   m_ObjectHideFlags: 0
