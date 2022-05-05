@@ -12,8 +12,10 @@ public class SmashPowerup : SmashItem
             int debrisAmount = Random.Range(10, 15);
             debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
 
-            if (itemType == ItemTypes.Arrow)
+            if (itemType == ItemType.Arrow)
                 sceneManager.SpeedUp();
+            else if (itemType == ItemType.Star)
+                sceneManager.Invincible();
 
             Destroy(this.gameObject);
         }

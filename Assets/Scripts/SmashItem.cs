@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class SmashItem : MonoBehaviour
 {
-    public enum ItemTypes {
+    public enum ItemType {
         Arrow,
+        Star,
         Robot,
         Wall
     }
-    public ItemTypes itemType = ItemTypes.Arrow;
+    public ItemType itemType = ItemType.Arrow;
     protected Color debrisColor;
     protected DebrisManager debrisManager;
 
@@ -23,15 +24,19 @@ public class SmashItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (itemType == ItemTypes.Arrow)
+        if (itemType == ItemType.Arrow)
         {
             debrisColor = new Color(237f, 0, 203f);
         }
-        else if (itemType == ItemTypes.Robot)
+        if (itemType == ItemType.Star)
+        {
+            debrisColor = new Color(237f, 0, 203f);
+        }
+        else if (itemType == ItemType.Robot)
         {
             debrisColor = Color.gray;
         }
-        else if (itemType == ItemTypes.Wall)
+        else if (itemType == ItemType.Wall)
         {
             debrisColor = Color.red;
         }

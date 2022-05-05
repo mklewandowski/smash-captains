@@ -23,7 +23,8 @@ public class Globals
         Yellow,
         Red,
         Orange,
-        Blue
+        Blue,
+        Pink
     }
 
     // audio and music

@@ -9,14 +9,17 @@ public class SmashEnemy : SmashItem
         {
             audioManager.PlaySmashSound();
 
-            int debrisMax = itemType == ItemTypes.Wall ? 20 : 15;
+            int debrisMax = itemType == ItemType.Wall ? 20 : 15;
             int debrisAmount = Random.Range(10, debrisMax);
             debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
 
             Camera.main.GetComponent<CameraShake>().StartShake();
 
-            float newSpeed = Mathf.Max(Globals.minSpeed, Globals.ScrollSpeed.x - 1f);
-            Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
+            if (!sceneManager.IsInvincible())
+            {
+                float newSpeed = Mathf.Max(Globals.minSpeed, Globals.ScrollSpeed.x - 1f);
+                Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
+            }
 
             Destroy(this.gameObject);
         }

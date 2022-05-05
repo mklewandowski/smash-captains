@@ -47,7 +47,10 @@ public class SceneManager : MonoBehaviour
     GameObject FinishLine;
     [SerializeField]
     GameObject SpeedUpMessage;
-    float SpeedUpTimer = 0f;
+    [SerializeField]
+    GameObject InvincibleMessage;
+    float invincibleTimer = 0;
+    float invincibleTimerMax = 4f;
 
     [SerializeField]
     GameObject HUDRaceComplete;
@@ -66,6 +69,8 @@ public class SceneManager : MonoBehaviour
 	GameObject EnemyPrefab;
     [SerializeField]
 	GameObject SpeedPowerupPrefab;
+    [SerializeField]
+	GameObject StarPowerupPrefab;
     [SerializeField]
     GameObject WallPrefab;
 
@@ -177,6 +182,15 @@ public class SceneManager : MonoBehaviour
                     );
             }
         }
+
+        if (invincibleTimer > 0)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer <= 0)
+            {
+                Player.GetComponent<PlaneColor>().RestorePlaneColor();
+            }
+        }
     }
 
     void UpdateShowScore()
@@ -198,11 +212,29 @@ public class SceneManager : MonoBehaviour
         float newSpeed = Mathf.Min(Globals.maxSpeed, Globals.ScrollSpeed.x + 1f);
         Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
 
-        SpeedUpTimer = 2.5f;
         SpeedUpMessage.transform.localScale = new Vector3(.1f, .1f, .1f);
         SpeedUpMessage.SetActive(true);
         SpeedUpMessage.GetComponent<GrowAndShrink>().StartEffect();
         SpeedUpMessage.GetComponent<WaitAndHide>().StartEffect();
+    }
+
+    public void Invincible()
+    {
+        InvincibleMessage.transform.localScale = new Vector3(.1f, .1f, .1f);
+        InvincibleMessage.SetActive(true);
+        InvincibleMessage.GetComponent<GrowAndShrink>().StartEffect();
+        InvincibleMessage.GetComponent<WaitAndHide>().StartEffect();
+        invincibleTimer = invincibleTimerMax;
+        Player.GetComponent<PlaneColor>().SetPlaneColor((int)Globals.PlaneColor.Pink);
+    }
+
+    public bool IsInvincible()
+    {
+        return invincibleTimer > 0;
+    }
+    public float InvinciblePercent()
+    {
+        return invincibleTimer / invincibleTimerMax;
     }
 
     public void StartGame()
@@ -221,6 +253,7 @@ public class SceneManager : MonoBehaviour
         Level.SetActive(true);
         Player.SetActive(true);
 
+        invincibleTimer = 0f;
         Globals.CurrentTime = 0;
         HUDTimeInt.text = "0";
         HUDTimeDec.text = "0";
@@ -261,7 +294,8 @@ public class SceneManager : MonoBehaviour
                     if (randomVal < 30f)
                     {
                         // powerup
-                        GameObject powerup = (GameObject)Instantiate(SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), 3f), Quaternion.identity);
+                        float powerupRandVal = Random.Range(0f, 100.0f);
+                        GameObject powerup = (GameObject)Instantiate(powerupRandVal > 80 ? StarPowerupPrefab : SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), 3f), Quaternion.identity);
                     }
                     else if (randomVal < 55f)
                     {
@@ -298,6 +332,8 @@ public class SceneManager : MonoBehaviour
 
         audioManager.PlayFanfareSound();
         ReleaseBalloons();
+
+        Player.GetComponent<PlaneColor>().RestorePlaneColor();
     }
 
     public void ReleaseBalloons()

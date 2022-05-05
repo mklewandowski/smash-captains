@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48646c9a348e0f42a878eb36bda966c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
+  itemType: 2
 --- !u!114 &6936124814904551742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +92,8 @@ MonoBehaviour:
   topY: 0
   bottomY: 0
   offsetY: 1
+  moveSpeedMin: 0.25
+  moveSpeedMax: 1
   moveSpeed: 0.75
   bounceOn: 1
 --- !u!1 &5290717097629870289
