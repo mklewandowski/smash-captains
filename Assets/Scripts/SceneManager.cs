@@ -255,7 +255,7 @@ public class SceneManager : MonoBehaviour
                    else if (randomVal < 80f)
                     {
                         // wall
-                        wallYPos = Random.Range(0f, 100.0f) > 50f ? -2.8f : 3.7f;
+                        wallYPos = Random.Range(0f, 100.0f) > 50f ? -2.8f : 4f;
                         wallToAdd = Random.Range(0, 4);
                         GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, 3f), Quaternion.identity);
                         wall.transform.localEulerAngles = new Vector3(0f, 240f, 0f);
