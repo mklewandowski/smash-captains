@@ -320,6 +320,8 @@ public class SceneManager : MonoBehaviour
         Globals.ScrollSpeed = new Vector2(0, 0);
         HUDRaceComplete.SetActive(true);
         HUDRaceComplete.GetComponent<GrowAndShrink>().StartEffect();
+        float roundedTime = Mathf.Floor(Globals.CurrentTime * 100f) / 100f;
+        Globals.CurrentTime = roundedTime;
         if (Globals.CurrentTime < Globals.BestTime || Globals.BestTime == 0f)
         {
             Globals.BestTime = Globals.CurrentTime;
