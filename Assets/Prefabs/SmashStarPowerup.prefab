@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5605421895974677279}
   - component: {fileID: 5605421895974677276}
   m_Layer: 0
-  m_Name: SmashPowerup
+  m_Name: SmashStarPowerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

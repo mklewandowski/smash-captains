@@ -45,6 +45,9 @@ public class SceneManager : MonoBehaviour
     GameObject HUDSpeed;
     [SerializeField]
     GameObject FinishLine;
+    [SerializeField]
+    GameObject SpeedUpMessage;
+    float SpeedUpTimer = 0f;
 
     [SerializeField]
     GameObject HUDRaceComplete;
@@ -62,7 +65,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
 	GameObject EnemyPrefab;
     [SerializeField]
-	GameObject PowerupPrefab;
+	GameObject SpeedPowerupPrefab;
     [SerializeField]
     GameObject WallPrefab;
 
@@ -190,6 +193,18 @@ public class SceneManager : MonoBehaviour
         }
     }
 
+    public void SpeedUp()
+    {
+        float newSpeed = Mathf.Min(Globals.maxSpeed, Globals.ScrollSpeed.x + 1f);
+        Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
+
+        SpeedUpTimer = 2.5f;
+        SpeedUpMessage.transform.localScale = new Vector3(.1f, .1f, .1f);
+        SpeedUpMessage.SetActive(true);
+        SpeedUpMessage.GetComponent<GrowAndShrink>().StartEffect();
+        SpeedUpMessage.GetComponent<WaitAndHide>().StartEffect();
+    }
+
     public void StartGame()
     {
         if (Globals.CurrentGameState != Globals.GameState.TitleScreen && Globals.CurrentGameState != Globals.GameState.Restart)
@@ -246,7 +261,7 @@ public class SceneManager : MonoBehaviour
                     if (randomVal < 30f)
                     {
                         // powerup
-                        GameObject powerup = (GameObject)Instantiate(PowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), 3f), Quaternion.identity);
+                        GameObject powerup = (GameObject)Instantiate(SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), 3f), Quaternion.identity);
                     }
                     else if (randomVal < 55f)
                     {

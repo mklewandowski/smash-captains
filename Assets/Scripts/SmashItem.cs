@@ -2,37 +2,39 @@ using UnityEngine;
 
 public class SmashItem : MonoBehaviour
 {
-	public enum ItemTypes {
-		Coin,
-		Robot,
+    public enum ItemTypes {
+        Arrow,
+        Robot,
         Wall
-	}
-	public ItemTypes itemType = ItemTypes.Coin;
-	protected Color debrisColor;
+    }
+    public ItemTypes itemType = ItemTypes.Arrow;
+    protected Color debrisColor;
     protected DebrisManager debrisManager;
 
     protected AudioManager audioManager;
+    protected SceneManager sceneManager;
 
     void Awake()
     {
         audioManager = GameObject.Find("SceneManager").GetComponent<AudioManager>();
+        sceneManager = GameObject.Find("SceneManager").GetComponent<SceneManager>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-		if (itemType == ItemTypes.Coin)
+        if (itemType == ItemTypes.Arrow)
         {
-			debrisColor = Color.yellow;
-		}
+            debrisColor = new Color(237f, 0, 203f);
+        }
         else if (itemType == ItemTypes.Robot)
         {
-			debrisColor = Color.gray;
-		}
+            debrisColor = Color.gray;
+        }
         else if (itemType == ItemTypes.Wall)
         {
-			debrisColor = Color.red;
-		}
+            debrisColor = Color.red;
+        }
 
         GameObject dm = GameObject.Find ("DebrisManager");
         debrisManager = dm.GetComponent<DebrisManager> ();

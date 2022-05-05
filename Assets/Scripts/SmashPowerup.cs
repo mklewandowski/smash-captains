@@ -12,8 +12,8 @@ public class SmashPowerup : SmashItem
             int debrisAmount = Random.Range(10, 15);
             debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
 
-            float newSpeed = Mathf.Min(Globals.maxSpeed, Globals.ScrollSpeed.x + 1f);
-            Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
+            if (itemType == ItemTypes.Arrow)
+                sceneManager.SpeedUp();
 
             Destroy(this.gameObject);
         }
