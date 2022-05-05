@@ -9,7 +9,7 @@ public class SmashPowerup : SmashItem
         {
             audioManager.PlayPowerupSound();
 
-            int debrisAmount = 10;
+            int debrisAmount = Random.Range(10, 15);
             debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
 
             float newSpeed = Mathf.Min(Globals.maxSpeed, Globals.ScrollSpeed.x + 1f);

@@ -9,7 +9,8 @@ public class SmashEnemy : SmashItem
         {
             audioManager.PlaySmashSound();
 
-            int debrisAmount = 10;
+            int debrisMax = itemType == ItemTypes.Wall ? 20 : 15;
+            int debrisAmount = Random.Range(10, debrisMax);
             debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
 
             Camera.main.GetComponent<CameraShake>().StartShake();
