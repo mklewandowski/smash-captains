@@ -484,8 +484,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1786826857}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+      - m_Target: {fileID: 1786826859}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayMenuSound
         m_Mode: 1
         m_Arguments:
@@ -5823,8 +5823,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1786826857}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+      - m_Target: {fileID: 1786826859}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayMenuSound
         m_Mode: 1
         m_Arguments:
@@ -6350,8 +6350,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1786826857}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+      - m_Target: {fileID: 1786826859}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayMenuSound
         m_Mode: 1
         m_Arguments:
@@ -8070,8 +8070,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1786826857}
-        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+      - m_Target: {fileID: 1786826859}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: PlayMenuSound
         m_Mode: 1
         m_Arguments:
@@ -13167,11 +13167,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 88c4906691db2e4478f06f68b8af1598, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

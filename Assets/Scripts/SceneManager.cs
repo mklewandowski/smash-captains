@@ -6,7 +6,6 @@ using TMPro;
 public class SceneManager : MonoBehaviour
 {
     AudioManager audioManager;
-    SettingsManager settingsManager;
 
     [SerializeField]
     GameObject Player;
@@ -74,17 +73,11 @@ public class SceneManager : MonoBehaviour
         Application.targetFrameRate = 60;
 
         Globals.BestTime = Globals.LoadFloatFromPlayerPrefs(Globals.BestTimePlayerPrefsKey);
-        int audioOn = Globals.LoadIntFromPlayerPrefs(Globals.AudioPlayerPrefsKey, 1);
-        int musicOn = Globals.LoadIntFromPlayerPrefs(Globals.MusicPlayerPrefsKey, 1);
-        Globals.AudioOn = audioOn == 1 ? true : false;
-        Globals.MusicOn = musicOn == 1 ? true : false;
 
         HUDTitle.GetComponent<MoveNormal>().MoveRight();
         HUDButtons.GetComponent<MoveNormal>().MoveUp();
 
         audioManager = this.GetComponent<AudioManager>();
-        settingsManager = this.GetComponent<SettingsManager>();
-        settingsManager.Init();
     }
 
     // Update is called once per frame
@@ -270,8 +263,6 @@ public class SceneManager : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     public void EndGame()

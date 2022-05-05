@@ -3,6 +3,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
+    SettingsManager settingsManager;
 
     [SerializeField]
     AudioClip MenuSound;
@@ -16,6 +17,24 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         audioSource = this.GetComponent<AudioSource>();
+        int audioOn = Globals.LoadIntFromPlayerPrefs(Globals.AudioPlayerPrefsKey, 1);
+        int musicOn = Globals.LoadIntFromPlayerPrefs(Globals.MusicPlayerPrefsKey, 1);
+        Globals.AudioOn = audioOn == 1 ? true : false;
+        Globals.MusicOn = musicOn == 1 ? true : false;
+        if (Globals.MusicOn)
+            audioSource.Play();
+
+        settingsManager = this.GetComponent<SettingsManager>();
+        settingsManager.Init();
+    }
+
+    public void StartMusic()
+    {
+        audioSource.Play();
+    }
+    public void StopMusic()
+    {
+        audioSource.Stop();
     }
 
     public void PlayMenuSound()

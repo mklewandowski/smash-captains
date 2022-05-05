@@ -41,6 +41,10 @@ public class SettingsManager : MonoBehaviour
     {
         Globals.MusicOn = !Globals.MusicOn;
         audioManager.PlayMenuSound();
+        if (Globals.MusicOn)
+            audioManager.StartMusic();
+        else
+            audioManager.StopMusic();
         MusicButtonImage.sprite = Globals.MusicOn ? MusicOnSprite : MusicOffSprite;
         Globals.SaveIntToPlayerPrefs(Globals.MusicPlayerPrefsKey, Globals.MusicOn ? 1 : 0);
     }
