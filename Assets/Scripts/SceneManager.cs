@@ -127,6 +127,7 @@ public class SceneManager : MonoBehaviour
             HUDRaceReady.transform.localScale = new Vector3(.1f, .1f, .1f);
             Globals.ScrollSpeed = new Vector2(6f, 0);
             Globals.CurrentGameState = Globals.GameState.Playing;
+            audioManager.PlayRaceGoSound();
         }
     }
 

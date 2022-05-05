@@ -17623,6 +17623,7 @@ MonoBehaviour:
   PowerupSound: {fileID: 8300000, guid: 6ae5189d80d477b46a1b735ec7855395, type: 3}
   SmashSound: {fileID: 8300000, guid: 2dfbbf78f1ed2b94aba49ca832b90453, type: 3}
   FanfareSound: {fileID: 8300000, guid: 28aeedcf7127a2747b410e7b07863894, type: 3}
+  RaceGoSound: {fileID: 8300000, guid: f913dbe0d325d0640a8a211f5cc41df3, type: 3}
 --- !u!1 &1798031266
 GameObject:
   m_ObjectHideFlags: 0
