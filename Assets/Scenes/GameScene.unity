@@ -10654,11 +10654,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d774f1d38bc0206439ec2477dc6918c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinkPlane: {fileID: 0}
-  YellowPlane: {fileID: 0}
-  OrangePlane: {fileID: 0}
-  RedPlane: {fileID: 0}
-  BluePlane: {fileID: 0}
 --- !u!54 &844741199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15722,7 +15717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474152854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1079774658}
