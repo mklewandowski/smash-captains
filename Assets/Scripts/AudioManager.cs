@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     AudioClip PowerupSound;
     [SerializeField]
     AudioClip SmashSound;
+    [SerializeField]
+    AudioClip FanfareSound;
 
     void Awake()
     {
@@ -59,6 +61,12 @@ public class AudioManager : MonoBehaviour
     {
         if (Globals.AudioOn)
             audioSource.PlayOneShot(SmashSound, 1f);
+    }
+
+    public void PlayFanfareSound()
+    {
+        if (Globals.AudioOn)
+            audioSource.PlayOneShot(FanfareSound, 1f);
     }
 
 }

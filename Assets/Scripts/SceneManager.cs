@@ -279,6 +279,19 @@ public class SceneManager : MonoBehaviour
         HUDBestTime.text = Globals.BestTime.ToString("F2");
         showScoreTimer = 3f;
         Globals.CurrentGameState = Globals.GameState.ShowScore;
+
+        audioManager.PlayFanfareSound();
+        ReleaseBalloons();
+    }
+
+    public void ReleaseBalloons()
+    {
+        Balloon[] balloons = GameObject.FindObjectsOfType<Balloon>(true);
+        for (int i = 0; i < balloons.Length; i++)
+        {
+            balloons[i].InitBalloon();
+            balloons[i].ReleaseBalloon();
+        }
     }
 
     public void SelectPlanesButton()
