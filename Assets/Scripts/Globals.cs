@@ -6,6 +6,7 @@ public class Globals
     public static Vector2 ScrollSpeed = new Vector2(6f, 0);
     public static float minSpeed = 4f;
     public static float maxSpeed = 16f;
+    public static float finishLineXPos = 800f;
 
     // moving direction
     public static Vector2 ScrollDirection = new Vector2(-1f, 0);

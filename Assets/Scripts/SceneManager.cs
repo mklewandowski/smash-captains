@@ -42,6 +42,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject HUDSpeed;
     [SerializeField]
+    GameObject HUDTrackProgress;
+    [SerializeField]
     GameObject FinishLine;
     [SerializeField]
     GameObject SpeedUpMessage;
@@ -73,8 +75,6 @@ public class SceneManager : MonoBehaviour
 	GameObject BombPowerupPrefab;
     [SerializeField]
     GameObject WallPrefab;
-
-    float finishLineXPos = 800f;
 
     void Awake()
     {
@@ -268,6 +268,7 @@ public class SceneManager : MonoBehaviour
         HUDTimeText.text = "0:00.00";
         HUDTime.SetActive(true);
         HUDSpeed.SetActive(true);
+        HUDTrackProgress.SetActive(true);
 
         CreateCourse();
 
@@ -279,7 +280,7 @@ public class SceneManager : MonoBehaviour
 
     public void CreateCourse()
     {
-        FinishLine.transform.localPosition = new Vector3(finishLineXPos, FinishLine.transform.localPosition.y, FinishLine.transform.localPosition.z);
+        FinishLine.transform.localPosition = new Vector3(Globals.finishLineXPos, FinishLine.transform.localPosition.y, FinishLine.transform.localPosition.z);
 
         int startOffset = 14;
         int endOffset = 8;
@@ -287,9 +288,9 @@ public class SceneManager : MonoBehaviour
         float wallYPos = 0f;
         float objectZPos = 1f;
         bool nextPowerupIsSpeed = false;
-        for (int x = 0; x < finishLineXPos; x++)
+        for (int x = 0; x < Globals.finishLineXPos; x++)
         {
-            if (x > startOffset && x < (finishLineXPos - endOffset))
+            if (x > startOffset && x < (Globals.finishLineXPos - endOffset))
             {
                 if (x % 2 == 0 && wallToAdd > 0)
                 {

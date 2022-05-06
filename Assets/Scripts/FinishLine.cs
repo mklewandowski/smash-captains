@@ -2,6 +2,19 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
+    [SerializeField]
+    GameObject TrackProgressMarker;
+
+    void Update()
+    {
+        if (Globals.CurrentGameState == Globals.GameState.Ready || Globals.CurrentGameState == Globals.GameState.Playing)
+        {
+            float percentComplete = (Globals.finishLineXPos - this.transform.localPosition.x) / Globals.finishLineXPos;
+            TrackProgressMarker.transform.localPosition = new Vector3(-400f + Globals.finishLineXPos * percentComplete,
+                TrackProgressMarker.transform.localPosition.y, TrackProgressMarker.transform.localPosition.z);
+        }
+    }
+
     void FixedUpdate()
     {
         if (Globals.CurrentGameState == Globals.GameState.Playing || Globals.CurrentGameState == Globals.GameState.ShowScore)
