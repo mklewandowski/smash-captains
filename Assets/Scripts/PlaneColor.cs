@@ -26,8 +26,8 @@ public class PlaneColor : MonoBehaviour
         Yellow.SetActive(planeColor == Globals.PlaneColor.Yellow);
         Orange.SetActive(planeColor == Globals.PlaneColor.Orange);
         Blue.SetActive(planeColor == Globals.PlaneColor.Blue);
-        Pink.SetActive(planeColor == Globals.PlaneColor.Pink);
-        GreenTank.SetActive(planeColor == Globals.PlaneColor.GreenTank);
+        if (Pink != null) Pink.SetActive(planeColor == Globals.PlaneColor.Pink);
+        if (GreenTank != null) GreenTank.SetActive(planeColor == Globals.PlaneColor.GreenTank);
     }
 
     public void RestorePlaneColor()
@@ -36,7 +36,7 @@ public class PlaneColor : MonoBehaviour
         Yellow.SetActive(currentPlaneColor == Globals.PlaneColor.Yellow);
         Orange.SetActive(currentPlaneColor == Globals.PlaneColor.Orange);
         Blue.SetActive(currentPlaneColor == Globals.PlaneColor.Blue);
-        Pink.SetActive(currentPlaneColor == Globals.PlaneColor.Pink);
-        GreenTank.SetActive(currentPlaneColor == Globals.PlaneColor.GreenTank);
+        if (Pink != null) Pink.SetActive(currentPlaneColor == Globals.PlaneColor.Pink);
+        if (GreenTank != null) GreenTank.SetActive(currentPlaneColor == Globals.PlaneColor.GreenTank);
     }
 }
