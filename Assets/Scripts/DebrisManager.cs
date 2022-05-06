@@ -5,6 +5,8 @@ using UnityEngine;
 public class DebrisManager : MonoBehaviour
 {
     [SerializeField]
+	GameObject DebrisContainer;
+    [SerializeField]
 	GameObject DebrisPrefab;
 	GameObject[] debrisPool = new GameObject[100];
 	Debris[] debrisScripts = new Debris[100];
@@ -13,7 +15,7 @@ public class DebrisManager : MonoBehaviour
     void Start()
     {
         for (int x = 0; x < debrisPool.Length; x++) {
-            debrisPool[x] = (GameObject)Instantiate (DebrisPrefab, new Vector3 (100f, 100f, 100f), Quaternion.identity);
+            debrisPool[x] = (GameObject)Instantiate (DebrisPrefab, new Vector3 (100f, 100f, 100f), Quaternion.identity, DebrisContainer.transform);
             debrisScripts[x] = debrisPool[x].GetComponent<Debris> ();
         }
     }

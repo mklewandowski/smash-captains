@@ -18151,6 +18151,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f3d03dd95a87d44690d08256c00fcaf, type: 3}
   m_PrefabInstance: {fileID: 375525607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1113435276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113435277}
+  m_Layer: 0
+  m_Name: Debris
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1113435277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113435276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2056936805}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1113542637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19269,6 +19299,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9d906beacc7b20e44918c0a44df65cbb, type: 3}
   m_PrefabInstance: {fileID: 1329482285}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1332100143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332100144}
+  m_Layer: 0
+  m_Name: SmashItems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1332100144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332100143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2056936805}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338108459
 GameObject:
   m_ObjectHideFlags: 0
@@ -22955,6 +23015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febfff7f2a5c2bf4096534809da90fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebrisContainer: {fileID: 1113435276}
   DebrisPrefab: {fileID: 7027797107951721628, guid: 53425832fd2c34c40b81e962f16d6013, type: 3}
 --- !u!4 &1746775090
 Transform:
@@ -23335,6 +23396,7 @@ MonoBehaviour:
   HUDFinalTimeContainer: {fileID: 1804108159}
   HUDFinalTime: {fileID: 1514503583}
   HUDBestTime: {fileID: 1056600321}
+  SmashItemContainer: {fileID: 1332100143}
   EnemyPrefab: {fileID: 3810516749534826504, guid: dff974689a256e64b9a8d9b8dbe5aaf9, type: 3}
   SpeedPowerupPrefab: {fileID: 138473407635450956, guid: 975ab52edd9cd6d4fbac74ae2bb5b31c, type: 3}
   StarPowerupPrefab: {fileID: 5802488855492581808, guid: 6194cf2f8b8d73a458a4eca25e82273b, type: 3}
@@ -24345,6 +24407,8 @@ Transform:
   - {fileID: 213852509}
   - {fileID: 844741196}
   - {fileID: 1049670159}
+  - {fileID: 1113435277}
+  - {fileID: 1332100144}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
