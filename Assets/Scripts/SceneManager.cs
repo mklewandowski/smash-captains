@@ -293,7 +293,7 @@ public class SceneManager : MonoBehaviour
                     {
                         // powerup
                         float powerupRandVal = Random.Range(0f, 100.0f);
-                        GameObject powerup = (GameObject)Instantiate(powerupRandVal > 80 ? StarPowerupPrefab : SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), objectZPos), Quaternion.identity);
+                        GameObject powerup = (GameObject)Instantiate(powerupRandVal > 80 ? StarPowerupPrefab : SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.2f, 4.2f), objectZPos), Quaternion.identity);
                     }
                     else if (randomVal < 55f)
                     {

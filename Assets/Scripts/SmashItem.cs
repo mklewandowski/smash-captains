@@ -26,7 +26,7 @@ public class SmashItem : MonoBehaviour
     {
         if (itemType == ItemType.Arrow)
         {
-            debrisColor = new Color(237f, 0, 203f);
+            debrisColor = Color.yellow;
         }
         if (itemType == ItemType.Star)
         {
