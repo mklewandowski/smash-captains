@@ -25,7 +25,8 @@ public class Globals
         Red,
         Orange,
         Blue,
-        Pink
+        Pink,
+        GreenTank
     }
 
     // audio and music

@@ -46,8 +46,6 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject FinishLine;
     [SerializeField]
-    GameObject SpeedUpMessage;
-    [SerializeField]
     GameObject InvincibleMessage;
     float invincibleTimer = 0;
     float invincibleTimerMax = 4f;
@@ -224,11 +222,6 @@ public class SceneManager : MonoBehaviour
     {
         float newSpeed = Mathf.Min(Globals.maxSpeed, Globals.ScrollSpeed.x + 1f);
         Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
-
-        SpeedUpMessage.transform.localScale = new Vector3(.1f, .1f, .1f);
-        SpeedUpMessage.SetActive(true);
-        SpeedUpMessage.GetComponent<GrowAndShrink>().StartEffect();
-        SpeedUpMessage.GetComponent<WaitAndHide>().StartEffect();
     }
 
     public void Invincible()
@@ -238,7 +231,7 @@ public class SceneManager : MonoBehaviour
         InvincibleMessage.GetComponent<GrowAndShrink>().StartEffect();
         InvincibleMessage.GetComponent<WaitAndHide>().StartEffect();
         invincibleTimer = invincibleTimerMax;
-        Player.GetComponent<PlaneColor>().SetPlaneColor((int)Globals.PlaneColor.Pink);
+        Player.GetComponent<PlaneColor>().SetPlaneColor((int)Globals.PlaneColor.GreenTank);
     }
 
     public bool IsInvincible()
