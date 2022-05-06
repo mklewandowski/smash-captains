@@ -10,7 +10,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     AudioClip StartSound;
     [SerializeField]
-    AudioClip PowerupSound;
+    AudioClip SpeedUpSound;
+    [SerializeField]
+    AudioClip InvincibleSound;
     [SerializeField]
     AudioClip SmashSound;
     [SerializeField]
@@ -61,10 +63,16 @@ public class AudioManager : MonoBehaviour
             audioSource.PlayOneShot(RaceGoSound, 1f);
     }
 
-    public void PlayPowerupSound()
+    public void PlaySpeedUpSound()
     {
         if (Globals.AudioOn)
-            audioSource.PlayOneShot(PowerupSound, 1f);
+            audioSource.PlayOneShot(SpeedUpSound, 1f);
+    }
+
+    public void PlayInvincibleSound()
+    {
+        if (Globals.AudioOn)
+            audioSource.PlayOneShot(InvincibleSound, 1f);
     }
 
     public void PlaySmashSound()

@@ -252,7 +252,6 @@ public class SceneManager : MonoBehaviour
 
     public void Bomb()
     {
-        audioManager.PlayBombSound();
         SmashEnemy[] enemies = GameObject.FindObjectsOfType<SmashEnemy>(true);
         for (int i = 0; i < enemies.Length; i++)
         {
