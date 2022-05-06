@@ -38,9 +38,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject HUDTime;
     [SerializeField]
-    TextMeshProUGUI HUDTimeInt;
-    [SerializeField]
-    TextMeshProUGUI HUDTimeDec;
+    TextMeshProUGUI HUDTimeText;
     [SerializeField]
     GameObject HUDSpeed;
     [SerializeField]
@@ -142,9 +140,9 @@ public class SceneManager : MonoBehaviour
     void UpdatePlaying()
     {
         Globals.CurrentTime += Time.deltaTime;
-        HUDTimeInt.text = ((int)Mathf.Floor(Globals.CurrentTime)).ToString();
-        float decTimePart = (int)(Globals.CurrentTime * 100f % 100);
-        HUDTimeDec.text = (decTimePart < 10 ? "0" : "") + decTimePart.ToString();
+        int min = (int)Globals.CurrentTime / 60;
+        float sec = Globals.CurrentTime - (min * 60f);
+        HUDTimeText.text = min.ToString() + ":" + (sec < 10 ? "0" : "") + sec.ToString("F2");
 
         float cloudMinX = -15f;
         for (int i = 0; i < Clouds.Length; i++)
@@ -255,8 +253,7 @@ public class SceneManager : MonoBehaviour
 
         invincibleTimer = 0f;
         Globals.CurrentTime = 0;
-        HUDTimeInt.text = "0";
-        HUDTimeDec.text = "0";
+        HUDTimeText.text = "0:00.00";
         HUDTime.SetActive(true);
         HUDSpeed.SetActive(true);
 
@@ -321,15 +318,18 @@ public class SceneManager : MonoBehaviour
         Globals.ScrollSpeed = new Vector2(0, 0);
         HUDRaceComplete.SetActive(true);
         HUDRaceComplete.GetComponent<GrowAndShrink>().StartEffect();
-        float roundedTime = Mathf.Floor(Globals.CurrentTime * 100f) / 100f;
-        Globals.CurrentTime = roundedTime;
+
         if (Globals.CurrentTime < Globals.BestTime || Globals.BestTime == 0f)
         {
             Globals.BestTime = Globals.CurrentTime;
             Globals.SaveFloatToPlayerPrefs(Globals.BestTimePlayerPrefsKey, Globals.BestTime);
         }
-        HUDFinalTime.text = Globals.CurrentTime.ToString("F2");
-        HUDBestTime.text = Globals.BestTime.ToString("F2");
+        int finalMin = (int)Globals.CurrentTime / 60;
+        float finalSec = Globals.CurrentTime - (finalMin * 60f);
+        HUDFinalTime.text = finalMin.ToString() + ":" + (finalSec < 10 ? "0" : "") + finalSec.ToString("F2");
+        int bestMin = (int)Globals.CurrentTime / 60;
+        float bestSec = Globals.CurrentTime - (bestMin * 60f);
+        HUDBestTime.text = bestMin.ToString() + ":" + (bestSec < 10 ? "0" : "") + bestSec.ToString("F2");
         showScoreTimer = 3f;
         Globals.CurrentGameState = Globals.GameState.ShowScore;
 
