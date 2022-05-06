@@ -11,9 +11,13 @@ public class Player : MonoBehaviour
     float speedRange = 6f;
     float maxAngle = 35f;
 
+    [SerializeField]
+    Transform DustParticle;
+
     void Awake()
     {
         audioManager = this.GetComponent<AudioManager>();
+        DustParticle.GetComponent<ParticleSystem>().Stop();
     }
 
     void Update() {
@@ -24,6 +28,8 @@ public class Player : MonoBehaviour
         if (thrust && Globals.CurrentGameState == Globals.GameState.Playing)
         {
             movement.y += 25f * Time.deltaTime;
+            if (isGrounded)
+                DustParticle.GetComponent<ParticleSystem>().Stop ();
             isGrounded = false;
         }
         movement.y = Mathf.Max(movement.y, -6.0f);
@@ -40,6 +46,8 @@ public class Player : MonoBehaviour
         if(transform.localPosition.y <= minYPos)
         {
             // did we hit the ground? stop it if we did
+            if (!isGrounded && Globals.CurrentGameState == Globals.GameState.Playing)
+                DustParticle.GetComponent<ParticleSystem>().Play();
             isGrounded = true;
             transform.localPosition = new Vector3 (transform.localPosition.x, minYPos, transform.localPosition.z);
             movement.y = 0f;
