@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         thrust = Input.GetKey ("space") | Input.GetButton ("Fire1") | Input.GetButton ("Fire2");
 
         movement.y += gravity * Time.deltaTime;
-        //user "thrust", give plane some upward movement
+        // user "thrust", give plane some upward movement
         if (thrust && Globals.CurrentGameState == Globals.GameState.Playing)
         {
             movement.y += 25f * Time.deltaTime;
@@ -30,25 +30,25 @@ public class Player : MonoBehaviour
         movement.y = Mathf.Min(movement.y, 6.0f);
         this.gameObject.GetComponent<Rigidbody> ().velocity = movement;
 
-        //what is the min position based on the current angle?
+        // what is the min position based on the current angle?
+        float maxYPos = 3.9f;
         float minYPos = -3.3f;
         float adjustAmount = .45f;
         float anglePercent = (movement.y / speedRange);
         minYPos = minYPos - adjustAmount * anglePercent;
 
-        //did we hit the ground?, stop it if we did
         if(transform.localPosition.y <= minYPos)
         {
+            // did we hit the ground? stop it if we did
             isGrounded = true;
             transform.localPosition = new Vector3 (transform.localPosition.x, minYPos, transform.localPosition.z);
             movement.y = 0f;
             this.gameObject.GetComponent<Rigidbody> ().velocity = movement;
         }
-
-        //don't let the ship go offscreen to the top
-        else if (transform.localPosition.y >= 3f)
+        else if (transform.localPosition.y >= maxYPos)
         {
-            transform.localPosition = new Vector3 (transform.localPosition.x, 3f, transform.localPosition.z);
+            // don't let the ship go offscreen to the top
+            transform.localPosition = new Vector3 (transform.localPosition.x, maxYPos, transform.localPosition.z);
             if (movement.y > 0)
                 movement.y -= 30f * Time.deltaTime;
             else
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody> ().velocity = movement;
         }
 
-        //set the rotation of plane
+        // set the rotation of plane
         float newRotation = 0f;
         newRotation = maxAngle * (movement.y / speedRange);
         this.transform.eulerAngles = new Vector3 (0, 0, newRotation);

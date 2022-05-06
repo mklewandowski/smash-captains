@@ -276,6 +276,7 @@ public class SceneManager : MonoBehaviour
         int endOffset = 8;
         int wallToAdd = 0;
         float wallYPos = 0f;
+        float objectZPos = 1f;
         for (int x = 0; x < finishLineXPos; x++)
         {
             if (x > startOffset && x < (finishLineXPos - endOffset))
@@ -283,7 +284,7 @@ public class SceneManager : MonoBehaviour
                 if (x % 2 == 0 && wallToAdd > 0)
                 {
                     // add a wall
-                    GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, 3f), Quaternion.identity);
+                    GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, objectZPos), Quaternion.identity);
                     wall.transform.localEulerAngles = new Vector3(0f, 240f, 0f);
                     wallToAdd--;
                 }
@@ -295,19 +296,19 @@ public class SceneManager : MonoBehaviour
                     {
                         // powerup
                         float powerupRandVal = Random.Range(0f, 100.0f);
-                        GameObject powerup = (GameObject)Instantiate(powerupRandVal > 80 ? StarPowerupPrefab : SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), 3f), Quaternion.identity);
+                        GameObject powerup = (GameObject)Instantiate(powerupRandVal > 80 ? StarPowerupPrefab : SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.5f, 3f), objectZPos), Quaternion.identity);
                     }
                     else if (randomVal < 55f)
                     {
                         // robot
-                        GameObject enemy = (GameObject)Instantiate(EnemyPrefab, new Vector3(x, Random.Range(-2.4f, 2.6f), 3f), Quaternion.identity);
+                        GameObject enemy = (GameObject)Instantiate(EnemyPrefab, new Vector3(x, Random.Range(-2.4f, 2.6f), objectZPos), Quaternion.identity);
                     }
                    else if (randomVal < 80f)
                     {
                         // wall
-                        wallYPos = Random.Range(0f, 100.0f) > 50f ? -2.8f : 4f;
+                        wallYPos = Random.Range(0f, 100.0f) > 50f ? -2.8f : 4.2f;
                         wallToAdd = Random.Range(0, 4);
-                        GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, 3f), Quaternion.identity);
+                        GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, objectZPos), Quaternion.identity);
                         wall.transform.localEulerAngles = new Vector3(0f, 240f, 0f);
                     }
                 }
