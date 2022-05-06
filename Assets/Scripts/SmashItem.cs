@@ -31,7 +31,7 @@ public class SmashItem : MonoBehaviour
         }
         if (itemType == ItemType.Star)
         {
-            debrisColor = new Color(237f, 0, 203f);
+            debrisColor = new Color(0, 85f / 255f, 0);
         }
         else if (itemType == ItemType.Robot)
         {

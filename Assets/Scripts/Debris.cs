@@ -31,10 +31,10 @@ public class Debris : MonoBehaviour
         transform.localScale =  new Vector3 (newscale, newscale, newscale);
 
         // give it some physics
-        Vector3 movementVector = new Vector3(0,0,0);
-        movementVector.x += Random.Range(-5f,5f) * Time.deltaTime * 100f;
-        movementVector.y += Random.Range(-2,4f) * Time.deltaTime * 100f;
-        movementVector.z += Random.Range(-4f,4f) * Time.deltaTime * 100f;
+        Vector3 movementVector = new Vector3(0, 0, 0);
+        movementVector.x += Random.Range(-5f, 5f) * Time.deltaTime * 100f;
+        movementVector.y += Random.Range(-2, 4f) * Time.deltaTime * 100f;
+        movementVector.z += Random.Range(-4f, 4f) * Time.deltaTime * 100f;
         this.gameObject.GetComponent<Rigidbody>().velocity = movementVector;
 
         this.gameObject.SetActive (true);
