@@ -366,8 +366,8 @@ public class SceneManager : MonoBehaviour
         int finalMin = (int)Globals.CurrentTime / 60;
         float finalSec = Globals.CurrentTime - (finalMin * 60f);
         HUDFinalTime.text = finalMin.ToString() + ":" + (finalSec < 10 ? "0" : "") + finalSec.ToString("F2");
-        int bestMin = (int)Globals.CurrentTime / 60;
-        float bestSec = Globals.CurrentTime - (bestMin * 60f);
+        int bestMin = (int)Globals.BestTime / 60;
+        float bestSec = Globals.BestTime - (bestMin * 60f);
         HUDBestTime.text = bestMin.ToString() + ":" + (bestSec < 10 ? "0" : "") + bestSec.ToString("F2");
         showScoreTimer = 3f;
         Globals.CurrentGameState = Globals.GameState.ShowScore;
