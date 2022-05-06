@@ -12748,18 +12748,17 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Complete the course as fast as possible.
 
-    Avoid robots and walls
-    that decrease speed.
+    Avoid robots and walls that
+    decrease speed.
 
     Collect speed arrows to increase speed.
 
-    Collect
-    invincible stars and bombs to destroy robots and walls.
+    Collect invincible
+    stars and bombs to destroy robots and walls.
 
-    
 
-    A videogame
-    by therealmattkain. '
+
+    A videogame by therealmattkain. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d407e008f8efb74cb9eb081ee77a159, type: 2}
   m_sharedMaterial: {fileID: -6205062547955129678, guid: 3d407e008f8efb74cb9eb081ee77a159, type: 2}
@@ -15124,18 +15123,17 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Complete the course as fast as possible.
 
-    Avoid robots and walls
-    that decrease speed.
+    Avoid robots and walls that
+    decrease speed.
 
     Collect speed arrows to increase speed.
 
-    Collect
-    invincible stars and bombs to destroy robots and walls.
+    Collect invincible
+    stars and bombs to destroy robots and walls.
 
-    
 
-    A videogame
-    by therealmattkain. '
+
+    A videogame by therealmattkain. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d407e008f8efb74cb9eb081ee77a159, type: 2}
   m_sharedMaterial: {fileID: -6205062547955129678, guid: 3d407e008f8efb74cb9eb081ee77a159, type: 2}
@@ -15667,6 +15665,7 @@ GameObject:
   - component: {fileID: 844741199}
   - component: {fileID: 844741200}
   - component: {fileID: 844741201}
+  - component: {fileID: 844741198}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -15710,6 +15709,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DustParticle: {fileID: 118883071}
+--- !u!65 &844741198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844741195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 1.1, z: 0.57}
+  m_Center: {x: 0.7, y: 0.2, z: 0}
 --- !u!54 &844741199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15755,8 +15767,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 0.5, z: 1}
-  m_Center: {x: 0.5, y: 0.3, z: 0}
+  m_Size: {x: 2, y: 0.4, z: 0.57}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &857305777
 GameObject:
   m_ObjectHideFlags: 0

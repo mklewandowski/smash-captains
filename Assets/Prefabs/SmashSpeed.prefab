@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1319241361861956729}
   - component: {fileID: 3534781898151963256}
   - component: {fileID: 6946722290996399223}
+  - component: {fileID: 4251245011468790428}
   m_Layer: 0
   m_Name: SmashSpeed
   m_TagString: Untagged
@@ -74,8 +75,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 0.8, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.5, y: 0.6, z: 0.7}
+  m_Center: {x: 0, y: 0.02, z: 0}
+--- !u!65 &4251245011468790428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138473407635450956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1, z: 1}
+  m_Center: {x: 0.3, y: 0, z: 0}
 --- !u!1 &2179820066120269324
 GameObject:
   m_ObjectHideFlags: 0
