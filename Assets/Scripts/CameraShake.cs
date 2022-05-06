@@ -15,18 +15,20 @@ public class CameraShake : MonoBehaviour
     {
         Vector3 newPos;
         newPos = startPosition;
-        if(shakeTimer > 0)
+        if (shakeTimer > 0)
         {
             shakeTimer = shakeTimer - Time.deltaTime;
-            newPos.x =  newPos.x + Random.Range(shakeTimer * -.20f, shakeTimer * .20f);
-            newPos.y =  newPos.y + Random.Range(shakeTimer * -.20f, shakeTimer * .20f);
+            if (shakeTimer > 0)
+            {
+                newPos.x =  newPos.x + Random.Range(shakeTimer * -.20f, shakeTimer * .20f);
+                newPos.y =  newPos.y + Random.Range(shakeTimer * -.20f, shakeTimer * .20f);
+            }
+            transform.position = newPos;
         }
-        transform.position = newPos;
     }
 
     public void StartShake()
     {
-        startPosition = transform.position;
         shakeTimer = shakeTimerMax;
     }
 }
