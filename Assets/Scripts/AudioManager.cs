@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
     public void PlaySpeedUpSound()
     {
         if (Globals.AudioOn)
-            audioSource.PlayOneShot(SpeedUpSound, 1f);
+            audioSource.PlayOneShot(SpeedUpSound, .7f);
     }
 
     public void PlayInvincibleSound()
