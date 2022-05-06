@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
     AudioClip FanfareSound;
     [SerializeField]
     AudioClip RaceGoSound;
+    [SerializeField]
+    AudioClip BombSound;
 
     void Awake()
     {
@@ -75,6 +77,12 @@ public class AudioManager : MonoBehaviour
     {
         if (Globals.AudioOn)
             audioSource.PlayOneShot(FanfareSound, 1f);
+    }
+
+    public void PlayBombSound()
+    {
+        if (Globals.AudioOn)
+            audioSource.PlayOneShot(BombSound, 1f);
     }
 
 }

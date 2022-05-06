@@ -51,6 +51,10 @@ public class SceneManager : MonoBehaviour
     GameObject InvincibleMessage;
     float invincibleTimer = 0;
     float invincibleTimerMax = 4f;
+    [SerializeField]
+    GameObject BombFlash;
+    float bombflashTimer = 0;
+    float bombflashTimerMax = .1f;
 
     [SerializeField]
     GameObject HUDRaceComplete;
@@ -191,6 +195,15 @@ public class SceneManager : MonoBehaviour
                 Player.GetComponent<PlaneColor>().RestorePlaneColor();
             }
         }
+
+        if (bombflashTimer > 0)
+        {
+            bombflashTimer -= Time.deltaTime;
+            if (bombflashTimer <= 0)
+            {
+                BombFlash.SetActive(false);
+            }
+        }
     }
 
     void UpdateShowScore()
@@ -239,12 +252,15 @@ public class SceneManager : MonoBehaviour
 
     public void Bomb()
     {
+        audioManager.PlayBombSound();
         SmashEnemy[] enemies = GameObject.FindObjectsOfType<SmashEnemy>(true);
         for (int i = 0; i < enemies.Length; i++)
         {
             if (enemies[i].gameObject.transform.localPosition.x < 20f)
                 enemies[i].BombEnemy();
         }
+        BombFlash.SetActive(true);
+        bombflashTimer = bombflashTimerMax;
     }
 
     public void StartGame()
@@ -365,6 +381,7 @@ public class SceneManager : MonoBehaviour
         audioManager.PlayFanfareSound();
         ReleaseBalloons();
 
+        BombFlash.SetActive(false);
         Player.GetComponent<PlaneColor>().RestorePlaneColor();
     }
 
