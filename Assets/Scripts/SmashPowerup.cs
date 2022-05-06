@@ -16,6 +16,8 @@ public class SmashPowerup : SmashItem
                 sceneManager.SpeedUp();
             else if (itemType == ItemType.Star)
                 sceneManager.Invincible();
+            else if (itemType == ItemType.Bomb)
+                sceneManager.Bomb();
 
             Destroy(this.gameObject);
         }

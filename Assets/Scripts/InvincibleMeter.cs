@@ -25,8 +25,6 @@ public class InvincibleMeter : MonoBehaviour
             float delta = (maxMeterSize - minMeterSize) * sceneManager.InvinciblePercent();
 
             Meter.sizeDelta = new Vector2(minMeterSize + delta, Meter.sizeDelta.y);
-            Debug.Log(sceneManager.InvinciblePercent());
-            Debug.Log(delta);
         }
     }
 }

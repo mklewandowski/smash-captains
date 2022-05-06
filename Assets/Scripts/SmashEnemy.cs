@@ -24,4 +24,11 @@ public class SmashEnemy : SmashItem
             Destroy(this.gameObject);
         }
     }
+
+    public void BombEnemy()
+    {
+        int debrisAmount = 10;
+        debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
+        Destroy(this.gameObject);
+    }
 }

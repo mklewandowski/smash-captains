@@ -70,6 +70,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
 	GameObject StarPowerupPrefab;
     [SerializeField]
+	GameObject BombPowerupPrefab;
+    [SerializeField]
     GameObject WallPrefab;
 
     float finishLineXPos = 800f;
@@ -235,6 +237,16 @@ public class SceneManager : MonoBehaviour
         return invincibleTimer / invincibleTimerMax;
     }
 
+    public void Bomb()
+    {
+        SmashEnemy[] enemies = GameObject.FindObjectsOfType<SmashEnemy>(true);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (enemies[i].gameObject.transform.localPosition.x < 20f)
+                enemies[i].BombEnemy();
+        }
+    }
+
     public void StartGame()
     {
         if (Globals.CurrentGameState != Globals.GameState.TitleScreen && Globals.CurrentGameState != Globals.GameState.Restart)
@@ -274,6 +286,7 @@ public class SceneManager : MonoBehaviour
         int wallToAdd = 0;
         float wallYPos = 0f;
         float objectZPos = 1f;
+        bool nextPowerupIsSpeed = false;
         for (int x = 0; x < finishLineXPos; x++)
         {
             if (x > startOffset && x < (finishLineXPos - endOffset))
@@ -289,13 +302,28 @@ public class SceneManager : MonoBehaviour
                 {
                     // add nothing, a wall, an enemy, a powerup, or a robot
                     float randomVal = Random.Range(0f, 100.0f);
-                    if (randomVal < 30f)
+                    if (randomVal < 25f)
                     {
                         // powerup
                         float powerupRandVal = Random.Range(0f, 100.0f);
-                        GameObject powerup = (GameObject)Instantiate(powerupRandVal > 80 ? StarPowerupPrefab : SpeedPowerupPrefab, new Vector3(x, Random.Range(-3.2f, 4.2f), objectZPos), Quaternion.identity);
+                        GameObject powerupPrefab = SpeedPowerupPrefab;
+                        if (powerupRandVal > 85 && !nextPowerupIsSpeed)
+                        {
+                            powerupPrefab = BombPowerupPrefab;
+                            nextPowerupIsSpeed = true;
+                        }
+                        else if (powerupRandVal > 70 && !nextPowerupIsSpeed)
+                        {
+                            powerupPrefab = StarPowerupPrefab;
+                            nextPowerupIsSpeed = true;
+                        }
+                        else
+                        {
+                            nextPowerupIsSpeed = false;
+                        }
+                        GameObject powerup = (GameObject)Instantiate(powerupPrefab, new Vector3(x, Random.Range(-3.2f, 4.2f), objectZPos), Quaternion.identity);
                     }
-                    else if (randomVal < 55f)
+                    else if (randomVal < 50f)
                     {
                         // robot
                         GameObject enemy = (GameObject)Instantiate(EnemyPrefab, new Vector3(x, Random.Range(-2.4f, 2.6f), objectZPos), Quaternion.identity);

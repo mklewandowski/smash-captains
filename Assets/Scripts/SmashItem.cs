@@ -6,7 +6,8 @@ public class SmashItem : MonoBehaviour
         Arrow,
         Star,
         Robot,
-        Wall
+        Wall,
+        Bomb
     }
     public ItemType itemType = ItemType.Arrow;
     protected Color debrisColor;
@@ -39,6 +40,10 @@ public class SmashItem : MonoBehaviour
         else if (itemType == ItemType.Wall)
         {
             debrisColor = Color.red;
+        }
+        else if (itemType == ItemType.Bomb)
+        {
+            debrisColor = Color.black;
         }
 
         GameObject dm = GameObject.Find ("DebrisManager");
