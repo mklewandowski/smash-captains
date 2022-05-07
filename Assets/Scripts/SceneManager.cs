@@ -9,6 +9,8 @@ public class SceneManager : MonoBehaviour
 
     [SerializeField]
     GameObject Player;
+    [SerializeField]
+    SmokeManager smokeManager;
 
     [SerializeField]
     GameObject Level;
@@ -193,7 +195,6 @@ public class SceneManager : MonoBehaviour
             if (invincibleTimer < 1f)
             {
                 bool flash = (Mathf.Floor(invincibleTimer * 10f)) % 2 == 0;
-                Debug.Log(flash);
                 Player.GetComponent<PlaneColor>().TankFlash(flash);
             }
             if (invincibleTimer <= 0)
@@ -230,6 +231,7 @@ public class SceneManager : MonoBehaviour
     {
         float newSpeed = Mathf.Min(Globals.maxSpeed, Globals.ScrollSpeed.x + 1f);
         Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
+        smokeManager.SpeedUp();
     }
 
     public void Invincible()

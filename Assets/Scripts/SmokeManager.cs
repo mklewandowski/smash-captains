@@ -14,6 +14,9 @@ public class SmokeManager : MonoBehaviour
     float smokeTimer = 0f;
     float smokeTimerMax = .05f;
 
+    float speedTimer = 0f;
+    float speedTimerMax = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +31,17 @@ public class SmokeManager : MonoBehaviour
         smokeTimer -= Time.deltaTime;
         if (smokeTimer <= 0)
         {
-            StartSmoke(Random.Range(4, 6), Color.white);
+            StartSmoke(Random.Range(4, 6));
             smokeTimer = smokeTimerMax;
+        }
+
+        if (speedTimer > 0)
+        {
+            speedTimer -= Time.deltaTime;
         }
     }
 
-    public void StartSmoke(int amount, Color color)
+    public void StartSmoke(int amount)
     {
         int count = 0;
         for (int x = 0; x < smokePool.Length; x++)
@@ -42,6 +50,12 @@ public class SmokeManager : MonoBehaviour
             position.x = position.x + Random.Range(0, -.4f);
             position.y = position.y + Random.Range(-.18f, .18f);
             position.z = position.z + Random.Range(-.18f, .18f);
+
+            int randVal = Random.Range(0, 2);
+            Color color = speedTimer <= 0
+                ? Color.white
+                : randVal == 1 ? Color.yellow : new Color(255f / 255f, 106f / 255f, 0);
+
             if (!smokeScripts[x].InUse)
             {
                 count++;
@@ -50,5 +64,10 @@ public class SmokeManager : MonoBehaviour
             if (count >= amount)
                 break;
         }
+    }
+
+    public void SpeedUp()
+    {
+        speedTimer = speedTimerMax;
     }
 }

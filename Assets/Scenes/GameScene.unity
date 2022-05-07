@@ -18868,6 +18868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 844741195}
+  smokeManager: {fileID: 1512461357}
   Level: {fileID: 2056936804}
   Clouds:
   - {fileID: 2134852740}
