@@ -10,7 +10,7 @@ public class FinishLine : MonoBehaviour
         if (Globals.CurrentGameState == Globals.GameState.Ready || Globals.CurrentGameState == Globals.GameState.Playing)
         {
             float percentComplete = (Globals.finishLineXPos - this.transform.localPosition.x) / Globals.finishLineXPos;
-            TrackProgressMarker.transform.localPosition = new Vector3(-400f + Globals.finishLineXPos * percentComplete,
+            TrackProgressMarker.transform.localPosition = new Vector3(-289f + 578f * percentComplete,
                 TrackProgressMarker.transform.localPosition.y, TrackProgressMarker.transform.localPosition.z);
         }
     }

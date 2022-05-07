@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
         // what is the min position based on the current angle?
         float maxYPos = 3.9f;
-        float minYPos = -3.3f;
+        float minYPos = -3.1f;
         float adjustAmount = .45f;
         float anglePercent = (movement.y / speedRange);
         minYPos = minYPos - adjustAmount * anglePercent;

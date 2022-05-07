@@ -348,17 +348,17 @@ public class SceneManager : MonoBehaviour
                         {
                             nextPowerupIsSpeed = false;
                         }
-                        GameObject powerup = (GameObject)Instantiate(powerupPrefab, new Vector3(x, Random.Range(-3.2f, 4.2f), objectZPos), Quaternion.identity, SmashItemContainer.transform);
+                        GameObject powerup = (GameObject)Instantiate(powerupPrefab, new Vector3(x, Random.Range(-3.1f, 4.1f), objectZPos), Quaternion.identity, SmashItemContainer.transform);
                     }
                     else if (randomVal < 50f)
                     {
                         // robot
-                        GameObject enemy = (GameObject)Instantiate(EnemyPrefab, new Vector3(x, Random.Range(-2.4f, 2.6f), objectZPos), Quaternion.identity, SmashItemContainer.transform);
+                        GameObject enemy = (GameObject)Instantiate(EnemyPrefab, new Vector3(x, Random.Range(-2.0f, 2.6f), objectZPos), Quaternion.identity, SmashItemContainer.transform);
                     }
                    else if (randomVal < 80f)
                     {
                         // wall
-                        wallYPos = Random.Range(0f, 100.0f) > 50f ? -2.8f : 4.2f;
+                        wallYPos = Random.Range(0f, 100.0f) > 50f ? -2.65f : 4.2f;
                         wallToAdd = Random.Range(0, 4);
                         GameObject wall = (GameObject)Instantiate(WallPrefab, new Vector3(x, wallYPos, objectZPos), Quaternion.identity, SmashItemContainer.transform);
                         wall.transform.localEulerAngles = new Vector3(0f, 240f, 0f);
