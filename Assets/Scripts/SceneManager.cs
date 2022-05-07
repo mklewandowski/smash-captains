@@ -190,6 +190,12 @@ public class SceneManager : MonoBehaviour
         if (invincibleTimer > 0)
         {
             invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 1f)
+            {
+                bool flash = (Mathf.Floor(invincibleTimer * 10f)) % 2 == 0;
+                Debug.Log(flash);
+                Player.GetComponent<PlaneColor>().TankFlash(flash);
+            }
             if (invincibleTimer <= 0)
             {
                 Player.GetComponent<PlaneColor>().RestorePlaneColor();
@@ -228,12 +234,10 @@ public class SceneManager : MonoBehaviour
 
     public void Invincible()
     {
-        InvincibleMessage.transform.localScale = new Vector3(.1f, .1f, .1f);
         InvincibleMessage.SetActive(true);
-        InvincibleMessage.GetComponent<GrowAndShrink>().StartEffect();
         InvincibleMessage.GetComponent<WaitAndHide>().StartEffect();
         invincibleTimer = invincibleTimerMax;
-        Player.GetComponent<PlaneColor>().SetPlaneColor((int)Globals.PlaneColor.GreenTank);
+        Player.GetComponent<PlaneColor>().ChangeToTank();
     }
 
     public bool IsInvincible()
