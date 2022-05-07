@@ -33,9 +33,14 @@ public class Globals
     public static bool AudioOn;
     public static bool MusicOn;
 
-    //keep track of scoring
+    // keep track of scoring
     public static float BestTime = 0;
     public static float CurrentTime = 0;
+
+    // keep track of in-game metrics
+    public static int NumEnemiesSmashed;
+    public static int NumPowerups;
+    public static int NumHits;
 
     public const string AudioPlayerPrefsKey = "Audio";
     public const string MusicPlayerPrefsKey = "Music";

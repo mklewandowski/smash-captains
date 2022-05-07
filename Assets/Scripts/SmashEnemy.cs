@@ -5,8 +5,10 @@ public class SmashEnemy : SmashItem
     void OnTriggerEnter(Collider collider)
     {
         Player player = collider.gameObject.GetComponent<Player>();
-        if (player != null && Globals.CurrentGameState == Globals.GameState.Playing)
+        if (player != null && Globals.CurrentGameState == Globals.GameState.Playing && isActive)
         {
+            isActive = false;
+
             audioManager.PlaySmashSound();
 
             int debrisMax = itemType == ItemType.Wall ? 20 : 15;
@@ -17,18 +19,21 @@ public class SmashEnemy : SmashItem
 
             if (!sceneManager.IsInvincible())
             {
+                Globals.NumHits++;
                 float newSpeed = Mathf.Max(Globals.minSpeed, Globals.ScrollSpeed.x - 1f);
                 Globals.ScrollSpeed = new Vector2(newSpeed, Globals.ScrollSpeed.y);
             }
-
+            Globals.NumEnemiesSmashed++;
             Destroy(this.gameObject);
         }
     }
 
     public void BombEnemy()
     {
+        isActive = false;
         int debrisAmount = 10;
         debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
+        Globals.NumEnemiesSmashed++;
         Destroy(this.gameObject);
     }
 }

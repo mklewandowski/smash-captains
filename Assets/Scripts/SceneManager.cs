@@ -66,6 +66,12 @@ public class SceneManager : MonoBehaviour
     TextMeshProUGUI HUDFinalTime;
     [SerializeField]
     TextMeshProUGUI HUDBestTime;
+    [SerializeField]
+    TextMeshProUGUI HUDTotalDamage;
+    [SerializeField]
+    TextMeshProUGUI HUDTotalSmashes;
+    [SerializeField]
+    TextMeshProUGUI HUDTotalPowerups;
     float showScoreTimer = 3f;
 
     // smash items
@@ -137,6 +143,10 @@ public class SceneManager : MonoBehaviour
     {
         if (Input.GetKey ("space") | Input.GetButton ("Fire1") | Input.GetButton ("Fire2"))
         {
+            Globals.NumEnemiesSmashed = 0;
+            Globals.NumPowerups = 0;
+            Globals.NumHits = 0;
+
             HUDRaceReady.SetActive(false);
             HUDRaceReady.transform.localScale = new Vector3(.1f, .1f, .1f);
             Globals.ScrollSpeed = new Vector2(6f, 0);
@@ -256,7 +266,7 @@ public class SceneManager : MonoBehaviour
         SmashEnemy[] enemies = GameObject.FindObjectsOfType<SmashEnemy>(true);
         for (int i = 0; i < enemies.Length; i++)
         {
-            if (enemies[i].gameObject.transform.localPosition.x < 20f)
+            if (enemies[i].gameObject.transform.localPosition.x < 20f && enemies[i].gameObject.transform.localPosition.x > -10f)
                 enemies[i].BombEnemy();
         }
         BombFlash.SetActive(true);
@@ -375,6 +385,11 @@ public class SceneManager : MonoBehaviour
         int bestMin = (int)Globals.BestTime / 60;
         float bestSec = Globals.BestTime - (bestMin * 60f);
         HUDBestTime.text = bestMin.ToString() + ":" + (bestSec < 10 ? "0" : "") + bestSec.ToString("F2");
+
+        HUDTotalDamage.text = Globals.NumHits.ToString();
+        HUDTotalPowerups.text = Globals.NumPowerups.ToString();
+        HUDTotalSmashes.text = Globals.NumEnemiesSmashed.ToString();
+
         showScoreTimer = 3f;
         Globals.CurrentGameState = Globals.GameState.ShowScore;
 

@@ -16,6 +16,8 @@ public class SmashItem : MonoBehaviour
     protected AudioManager audioManager;
     protected SceneManager sceneManager;
 
+    protected bool isActive = true;
+
     void Awake()
     {
         audioManager = GameObject.Find("SceneManager").GetComponent<AudioManager>();

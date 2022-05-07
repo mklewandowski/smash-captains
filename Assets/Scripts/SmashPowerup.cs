@@ -5,8 +5,10 @@ public class SmashPowerup : SmashItem
     void OnTriggerEnter(Collider collider)
     {
         Player player = collider.gameObject.GetComponent<Player>();
-        if (player != null && Globals.CurrentGameState == Globals.GameState.Playing)
+        if (player != null && Globals.CurrentGameState == Globals.GameState.Playing && isActive)
         {
+            isActive = false;
+
             int debrisAmount = Random.Range(10, 15);
             debrisManager.StartDebris (debrisAmount, this.transform.position, debrisColor);
 
@@ -25,6 +27,8 @@ public class SmashPowerup : SmashItem
                 audioManager.PlayBombSound();
                 sceneManager.Bomb();
             }
+
+            Globals.NumPowerups++;
 
             Destroy(this.gameObject);
         }
