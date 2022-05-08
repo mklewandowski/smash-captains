@@ -26,6 +26,22 @@ public class Globals
         Orange,
         Blue,
         Pink,
+        Berkeley,
+        BombPop,
+        Burger,
+        CandyCorn,
+        CheeseBurger,
+        CottonCandy,
+        Creamsicle,
+        IceCreamSandwich,
+        Lime,
+        Pizza,
+        Pack,
+        Shadow,
+        Smores,
+        Snow,
+        Teal,
+        Watermelon,
         GreenTank
     }
 
