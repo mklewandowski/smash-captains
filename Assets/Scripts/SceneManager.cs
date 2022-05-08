@@ -61,7 +61,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject HUDGameOver;
     [SerializeField]
-    GameObject HUDFinalTimeContainer;
+    GameObject HUDFinalStatsContainer;
     [SerializeField]
     TextMeshProUGUI HUDFinalTime;
     [SerializeField]
@@ -230,7 +230,7 @@ public class SceneManager : MonoBehaviour
         {
             HUDRaceComplete.SetActive(false);
             HUDRaceComplete.transform.localScale = new Vector3(.1f, .1f, .1f);
-            HUDFinalTimeContainer.transform.localPosition = new Vector3(0, 0, 0);
+            HUDFinalStatsContainer.transform.localPosition = new Vector3(0, 0, 0);
             HUDButtons.GetComponent<MoveNormal>().MoveUp();
             HUDGameOver.GetComponent<MoveNormal>().MoveDown();
             Globals.CurrentGameState = Globals.GameState.Restart;
@@ -420,7 +420,7 @@ public class SceneManager : MonoBehaviour
         HUDPlayer.GetComponent<MoveNormal>().MoveLeft();
         HUDAbout.GetComponent<MoveNormal>().MoveRight();
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
-        HUDFinalTimeContainer.GetComponent<MoveNormal>().MoveRight();
+        HUDFinalStatsContainer.GetComponent<MoveNormal>().MoveRight();
     }
     public void SelectPlanesBackButton()
     {
@@ -436,7 +436,7 @@ public class SceneManager : MonoBehaviour
         HUDAbout.GetComponent<MoveNormal>().MoveLeft();
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
         HUDPlayer.GetComponent<MoveNormal>().MoveRight();
-        HUDFinalTimeContainer.GetComponent<MoveNormal>().MoveRight();
+        HUDFinalStatsContainer.GetComponent<MoveNormal>().MoveRight();
     }
     public void SelectSettingsButton()
     {
@@ -445,7 +445,7 @@ public class SceneManager : MonoBehaviour
         HUDSettings.GetComponent<MoveNormal>().MoveLeft();
         HUDAbout.GetComponent<MoveNormal>().MoveRight();
         HUDPlayer.GetComponent<MoveNormal>().MoveRight();
-        HUDFinalTimeContainer.GetComponent<MoveNormal>().MoveRight();
+        HUDFinalStatsContainer.GetComponent<MoveNormal>().MoveRight();
     }
 
 }

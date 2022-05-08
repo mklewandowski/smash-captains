@@ -6623,8 +6623,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1569890394}
-  m_RootOrder: 8
+  m_Father: {fileID: 1804108160}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8308,8 +8308,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1569890394}
-  m_RootOrder: 10
+  m_Father: {fileID: 1804108160}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8629,8 +8629,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1569890394}
-  m_RootOrder: 6
+  m_Father: {fileID: 1804108160}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9232,7 +9232,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4282930189
   m_fontColor: {r: 0.050980393, g: 0.32941177, b: 0.28235295, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -17113,8 +17113,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1569890394}
-  m_RootOrder: 5
+  m_Father: {fileID: 1804108160}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17251,12 +17251,6 @@ Transform:
   - {fileID: 45044946}
   - {fileID: 839802392}
   - {fileID: 1804108160}
-  - {fileID: 1556805869}
-  - {fileID: 518205451}
-  - {fileID: 2117896229}
-  - {fileID: 295495639}
-  - {fileID: 1896605957}
-  - {fileID: 465516963}
   m_Father: {fileID: 1772815381}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19250,7 +19244,7 @@ MonoBehaviour:
   BombFlash: {fileID: 1684889118}
   HUDRaceComplete: {fileID: 760735688}
   HUDGameOver: {fileID: 1569890393}
-  HUDFinalTimeContainer: {fileID: 1804108159}
+  HUDFinalStatsContainer: {fileID: 1804108159}
   HUDFinalTime: {fileID: 1514503583}
   HUDBestTime: {fileID: 1056600321}
   HUDTotalDamage: {fileID: 295495640}
@@ -19377,7 +19371,7 @@ GameObject:
   - component: {fileID: 1804108160}
   - component: {fileID: 1804108161}
   m_Layer: 0
-  m_Name: TimeContainer
+  m_Name: StatsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19398,6 +19392,12 @@ Transform:
   - {fileID: 229943239}
   - {fileID: 1514503582}
   - {fileID: 1056600320}
+  - {fileID: 1556805869}
+  - {fileID: 518205451}
+  - {fileID: 2117896229}
+  - {fileID: 295495639}
+  - {fileID: 1896605957}
+  - {fileID: 465516963}
   m_Father: {fileID: 1569890394}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19773,8 +19773,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1569890394}
-  m_RootOrder: 9
+  m_Father: {fileID: 1804108160}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20821,8 +20821,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1569890394}
-  m_RootOrder: 7
+  m_Father: {fileID: 1804108160}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
