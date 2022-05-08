@@ -9,6 +9,8 @@ public class SettingsManager : MonoBehaviour
     Image AudioButtonImage;
     [SerializeField]
     Image MusicButtonImage;
+    [SerializeField]
+    Image DayNightButtonImage;
 
     [SerializeField]
     Sprite AudioOnSprite;
@@ -18,6 +20,10 @@ public class SettingsManager : MonoBehaviour
     Sprite MusicOnSprite;
     [SerializeField]
     Sprite MusicOffSprite;
+    [SerializeField]
+    Sprite DaySprite;
+    [SerializeField]
+    Sprite NightSprite;
 
     void Awake()
     {
@@ -47,5 +53,13 @@ public class SettingsManager : MonoBehaviour
             audioManager.StopMusic();
         MusicButtonImage.sprite = Globals.MusicOn ? MusicOnSprite : MusicOffSprite;
         Globals.SaveIntToPlayerPrefs(Globals.MusicPlayerPrefsKey, Globals.MusicOn ? 1 : 0);
+    }
+    public void SelectDayNightButton()
+    {
+        Globals.DayMode = !Globals.DayMode;
+        audioManager.PlayMenuSound();
+        DayNightButtonImage.sprite = Globals.DayMode ? DaySprite : NightSprite;
+        Camera.main.backgroundColor = Globals.DayMode ? new Color (114f/255f, 180f/255f, 246f/255f) : new Color (135f/255f, 67f/255f, 232f/255f);
+        Globals.SaveIntToPlayerPrefs(Globals.DayModePlayerPrefsKey, Globals.DayMode ? 1 : 0);
     }
 }

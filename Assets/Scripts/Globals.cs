@@ -56,6 +56,9 @@ public class Globals
     public static bool AudioOn;
     public static bool MusicOn;
 
+    // day night mode
+    public static bool DayMode = true;
+
     // keep track of scoring
     public static float BestTime = 0;
     public static float CurrentTime = 0;
@@ -69,6 +72,7 @@ public class Globals
     public const string MusicPlayerPrefsKey = "Music";
     public const string BestTimePlayerPrefsKey = "BestTime";
     public const string PlaneFlavorPlayerPrefsKey = "PlaneFlavor";
+    public const string DayModePlayerPrefsKey = "DayMode";
 
     public static void SaveIntToPlayerPrefs(string key, int val)
     {
