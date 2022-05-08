@@ -49,6 +49,8 @@ public class Globals
         Zebra,
         PumpkinPie,
         CandyCane,
+        CheeseBroc,
+        StrawberryBanana,
         GreenTank
     }
 

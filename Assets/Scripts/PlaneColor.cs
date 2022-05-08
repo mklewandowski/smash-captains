@@ -58,6 +58,10 @@ public class PlaneColor : MonoBehaviour
     GameObject PumpkinPie;
     [SerializeField]
     GameObject CandyCane;
+    [SerializeField]
+    GameObject CheeseBroc;
+    [SerializeField]
+    GameObject StrawberryBanana;
 
     [SerializeField]
     GameObject GreenTank;
@@ -105,6 +109,8 @@ public class PlaneColor : MonoBehaviour
         Zebra.SetActive(planeColor == Globals.PlaneColor.Zebra);
         PumpkinPie.SetActive(planeColor == Globals.PlaneColor.PumpkinPie);
         CandyCane.SetActive(planeColor == Globals.PlaneColor.CandyCane);
+        CheeseBroc.SetActive(planeColor == Globals.PlaneColor.CheeseBroc);
+        StrawberryBanana.SetActive(planeColor == Globals.PlaneColor.StrawberryBanana);
 
         if (GreenTank != null) GreenTank.SetActive(planeColor == Globals.PlaneColor.GreenTank);
 
@@ -203,6 +209,10 @@ public class PlaneColor : MonoBehaviour
             currPlane = PumpkinPie;
         if (currentPlaneColor == Globals.PlaneColor.CandyCane)
             currPlane = CandyCane;
+        if (currentPlaneColor == Globals.PlaneColor.CheeseBroc)
+            currPlane = CheeseBroc;
+        if (currentPlaneColor == Globals.PlaneColor.StrawberryBanana)
+            currPlane = StrawberryBanana;
 
         return currPlane;
     }
