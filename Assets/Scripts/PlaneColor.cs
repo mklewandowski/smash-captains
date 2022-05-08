@@ -87,6 +87,8 @@ public class PlaneColor : MonoBehaviour
         Pink.SetActive(planeColor == Globals.PlaneColor.Pink);
 
         if (GreenTank != null) GreenTank.SetActive(planeColor == Globals.PlaneColor.GreenTank);
+
+        Globals.SaveIntToPlayerPrefs(Globals.PlaneFlavorPlayerPrefsKey, c);
     }
 
     public void ChangeToTank()

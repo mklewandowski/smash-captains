@@ -61,6 +61,7 @@ public class Globals
     public const string AudioPlayerPrefsKey = "Audio";
     public const string MusicPlayerPrefsKey = "Music";
     public const string BestTimePlayerPrefsKey = "BestTime";
+    public const string PlaneFlavorPlayerPrefsKey = "PlaneFlavor";
 
     public static void SaveIntToPlayerPrefs(string key, int val)
     {

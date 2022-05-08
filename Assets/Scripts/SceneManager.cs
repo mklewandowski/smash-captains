@@ -94,6 +94,10 @@ public class SceneManager : MonoBehaviour
 
         Globals.BestTime = Globals.LoadFloatFromPlayerPrefs(Globals.BestTimePlayerPrefsKey);
 
+        int planeFlavor = Globals.LoadIntFromPlayerPrefs(Globals.PlaneFlavorPlayerPrefsKey);
+        Player.GetComponent<PlaneColor>().SetPlaneColor(planeFlavor);
+        HUDPlayer.GetComponent<PlaneColor>().SetPlaneColor(planeFlavor);
+
         HUDTitle.GetComponent<MoveNormal>().MoveRight();
         HUDButtons.GetComponent<MoveNormal>().MoveUp();
 
