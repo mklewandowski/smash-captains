@@ -34,6 +34,8 @@ public class SettingsManager : MonoBehaviour
     {
         AudioButtonImage.sprite = Globals.AudioOn ? AudioOnSprite : AudioOffSprite;
         MusicButtonImage.sprite = Globals.MusicOn ? MusicOnSprite : MusicOffSprite;
+        DayNightButtonImage.sprite = Globals.DayMode ? DaySprite : NightSprite;
+        Camera.main.backgroundColor = Globals.DayMode ? new Color (114f/255f, 180f/255f, 246f/255f) : new Color (135f/255f, 67f/255f, 232f/255f);
     }
 
     public void SelectAudioButton()
