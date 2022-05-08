@@ -42,6 +42,13 @@ public class Globals
         Snow,
         Teal,
         Watermelon,
+        Christmas,
+        Tiger,
+        ApplePie,
+        CherryPie,
+        Zebra,
+        PumpkinPie,
+        CandyCane,
         GreenTank
     }
 

@@ -44,6 +44,20 @@ public class PlaneColor : MonoBehaviour
     GameObject Teal;
     [SerializeField]
     GameObject Watermelon;
+    [SerializeField]
+    GameObject Christmas;
+    [SerializeField]
+    GameObject Tiger;
+    [SerializeField]
+    GameObject ApplePie;
+    [SerializeField]
+    GameObject CherryPie;
+    [SerializeField]
+    GameObject Zebra;
+    [SerializeField]
+    GameObject PumpkinPie;
+    [SerializeField]
+    GameObject CandyCane;
 
     [SerializeField]
     GameObject GreenTank;
@@ -84,7 +98,13 @@ public class PlaneColor : MonoBehaviour
         Snow.SetActive(planeColor == Globals.PlaneColor.Snow);
         Teal.SetActive(planeColor == Globals.PlaneColor.Teal);
         Watermelon.SetActive(planeColor == Globals.PlaneColor.Watermelon);
-        Pink.SetActive(planeColor == Globals.PlaneColor.Pink);
+        Christmas.SetActive(planeColor == Globals.PlaneColor.Christmas);
+        Tiger.SetActive(planeColor == Globals.PlaneColor.Tiger);
+        ApplePie.SetActive(planeColor == Globals.PlaneColor.ApplePie);
+        CherryPie.SetActive(planeColor == Globals.PlaneColor.CherryPie);
+        Zebra.SetActive(planeColor == Globals.PlaneColor.Zebra);
+        PumpkinPie.SetActive(planeColor == Globals.PlaneColor.PumpkinPie);
+        CandyCane.SetActive(planeColor == Globals.PlaneColor.CandyCane);
 
         if (GreenTank != null) GreenTank.SetActive(planeColor == Globals.PlaneColor.GreenTank);
 
@@ -169,6 +189,20 @@ public class PlaneColor : MonoBehaviour
             currPlane = Teal;
         if (currentPlaneColor == Globals.PlaneColor.Watermelon)
             currPlane = Watermelon;
+        if (currentPlaneColor == Globals.PlaneColor.Christmas)
+            currPlane = Christmas;
+        if (currentPlaneColor == Globals.PlaneColor.Tiger)
+            currPlane = Tiger;
+        if (currentPlaneColor == Globals.PlaneColor.ApplePie)
+            currPlane = ApplePie;
+        if (currentPlaneColor == Globals.PlaneColor.CherryPie)
+            currPlane = CherryPie;
+        if (currentPlaneColor == Globals.PlaneColor.Zebra)
+            currPlane = Zebra;
+        if (currentPlaneColor == Globals.PlaneColor.PumpkinPie)
+            currPlane = PumpkinPie;
+        if (currentPlaneColor == Globals.PlaneColor.CandyCane)
+            currPlane = CandyCane;
 
         return currPlane;
     }
