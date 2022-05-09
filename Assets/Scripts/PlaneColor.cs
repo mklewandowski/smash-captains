@@ -157,61 +157,63 @@ public class PlaneColor : MonoBehaviour
         GameObject currPlane = Red;
         if (currentPlaneColor == Globals.PlaneColor.Yellow)
             currPlane = Yellow;
-        if (currentPlaneColor == Globals.PlaneColor.Orange)
+        else if (currentPlaneColor == Globals.PlaneColor.Red)
+            currPlane = Red;
+        else if (currentPlaneColor == Globals.PlaneColor.Orange)
             currPlane = Orange;
-        if (currentPlaneColor == Globals.PlaneColor.Blue)
+        else if (currentPlaneColor == Globals.PlaneColor.Blue)
             currPlane = Blue;
-        if (currentPlaneColor == Globals.PlaneColor.Pink)
+        else if (currentPlaneColor == Globals.PlaneColor.Pink)
             currPlane = Pink;
-        if (currentPlaneColor == Globals.PlaneColor.Berkeley)
+        else if (currentPlaneColor == Globals.PlaneColor.Berkeley)
             currPlane = Berkeley;
-        if (currentPlaneColor == Globals.PlaneColor.BombPop)
+        else if (currentPlaneColor == Globals.PlaneColor.BombPop)
             currPlane = BombPop;
-        if (currentPlaneColor == Globals.PlaneColor.Burger)
+        else if (currentPlaneColor == Globals.PlaneColor.Burger)
             currPlane = Burger;
-        if (currentPlaneColor == Globals.PlaneColor.CandyCorn)
+        else if (currentPlaneColor == Globals.PlaneColor.CandyCorn)
             currPlane = CandyCorn;
-        if (currentPlaneColor == Globals.PlaneColor.CheeseBurger)
+        else if (currentPlaneColor == Globals.PlaneColor.CheeseBurger)
             currPlane = CheeseBurger;
-        if (currentPlaneColor == Globals.PlaneColor.CottonCandy)
+        else if (currentPlaneColor == Globals.PlaneColor.CottonCandy)
             currPlane = CottonCandy;
-        if (currentPlaneColor == Globals.PlaneColor.Creamsicle)
+        else if (currentPlaneColor == Globals.PlaneColor.Creamsicle)
             currPlane = Creamsicle;
-        if (currentPlaneColor == Globals.PlaneColor.IceCreamSandwich)
+        else if (currentPlaneColor == Globals.PlaneColor.IceCreamSandwich)
             currPlane = IceCreamSandwich;
-        if (currentPlaneColor == Globals.PlaneColor.Lime)
+        else if (currentPlaneColor == Globals.PlaneColor.Lime)
             currPlane = Lime;
-        if (currentPlaneColor == Globals.PlaneColor.Pizza)
+        else if (currentPlaneColor == Globals.PlaneColor.Pizza)
             currPlane = Pizza;
-        if (currentPlaneColor == Globals.PlaneColor.Pack)
+        else if (currentPlaneColor == Globals.PlaneColor.Pack)
             currPlane = Pack;
-        if (currentPlaneColor == Globals.PlaneColor.Shadow)
+        else if (currentPlaneColor == Globals.PlaneColor.Shadow)
             currPlane = Shadow;
-        if (currentPlaneColor == Globals.PlaneColor.Smores)
+        else if (currentPlaneColor == Globals.PlaneColor.Smores)
             currPlane = Smores;
-        if (currentPlaneColor == Globals.PlaneColor.Snow)
+        else if (currentPlaneColor == Globals.PlaneColor.Snow)
             currPlane = Snow;
-        if (currentPlaneColor == Globals.PlaneColor.Teal)
+        else if (currentPlaneColor == Globals.PlaneColor.Teal)
             currPlane = Teal;
-        if (currentPlaneColor == Globals.PlaneColor.Watermelon)
+        else if (currentPlaneColor == Globals.PlaneColor.Watermelon)
             currPlane = Watermelon;
-        if (currentPlaneColor == Globals.PlaneColor.Christmas)
+        else if (currentPlaneColor == Globals.PlaneColor.Christmas)
             currPlane = Christmas;
-        if (currentPlaneColor == Globals.PlaneColor.Tiger)
+        else if (currentPlaneColor == Globals.PlaneColor.Tiger)
             currPlane = Tiger;
-        if (currentPlaneColor == Globals.PlaneColor.ApplePie)
+        else if (currentPlaneColor == Globals.PlaneColor.ApplePie)
             currPlane = ApplePie;
-        if (currentPlaneColor == Globals.PlaneColor.CherryPie)
+        else if (currentPlaneColor == Globals.PlaneColor.CherryPie)
             currPlane = CherryPie;
-        if (currentPlaneColor == Globals.PlaneColor.Zebra)
+        else if (currentPlaneColor == Globals.PlaneColor.Zebra)
             currPlane = Zebra;
-        if (currentPlaneColor == Globals.PlaneColor.PumpkinPie)
+        else if (currentPlaneColor == Globals.PlaneColor.PumpkinPie)
             currPlane = PumpkinPie;
-        if (currentPlaneColor == Globals.PlaneColor.CandyCane)
+        else if (currentPlaneColor == Globals.PlaneColor.CandyCane)
             currPlane = CandyCane;
-        if (currentPlaneColor == Globals.PlaneColor.CheeseBroc)
+        else if (currentPlaneColor == Globals.PlaneColor.CheeseBroc)
             currPlane = CheeseBroc;
-        if (currentPlaneColor == Globals.PlaneColor.StrawberryBanana)
+        else if (currentPlaneColor == Globals.PlaneColor.StrawberryBanana)
             currPlane = StrawberryBanana;
 
         return currPlane;

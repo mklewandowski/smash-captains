@@ -33,7 +33,7 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject HUDButtons;
     [SerializeField]
-    GameObject HUDPlanes;
+    GameObject HUDSelectPlanes;
 
     [SerializeField]
     GameObject HUDRaceReady;
@@ -290,6 +290,7 @@ public class SceneManager : MonoBehaviour
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
         HUDTitle.GetComponent<MoveNormal>().MoveLeft();
         HUDButtons.GetComponent<MoveNormal>().MoveDown();
+        HUDSelectPlanes.GetComponent<MoveNormal>().MoveDown();
         Level.SetActive(true);
         Player.SetActive(true);
 
@@ -418,20 +419,11 @@ public class SceneManager : MonoBehaviour
     {
         audioManager.PlayMenuSound();
 
-        HUDButtons.GetComponent<MoveNormal>().MoveDown();
-        HUDPlanes.GetComponent<MoveNormal>().MoveUp();
-
-        HUDPlayer.GetComponent<MoveNormal>().MoveLeft();
+        HUDSelectPlanes.GetComponent<MoveNormal>().MoveUp();
+        HUDPlayer.GetComponent<MoveNormal>().MoveRight();
         HUDAbout.GetComponent<MoveNormal>().MoveRight();
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
         HUDFinalStatsContainer.GetComponent<MoveNormal>().MoveRight();
-    }
-    public void SelectPlanesBackButton()
-    {
-        audioManager.PlayMenuSound();
-
-        HUDButtons.GetComponent<MoveNormal>().MoveUp();
-        HUDPlanes.GetComponent<MoveNormal>().MoveDown();
     }
     public void SelectAboutButton()
     {
@@ -441,6 +433,7 @@ public class SceneManager : MonoBehaviour
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
         HUDPlayer.GetComponent<MoveNormal>().MoveRight();
         HUDFinalStatsContainer.GetComponent<MoveNormal>().MoveRight();
+        HUDSelectPlanes.GetComponent<MoveNormal>().MoveDown();
     }
     public void SelectSettingsButton()
     {
@@ -450,6 +443,17 @@ public class SceneManager : MonoBehaviour
         HUDAbout.GetComponent<MoveNormal>().MoveRight();
         HUDPlayer.GetComponent<MoveNormal>().MoveRight();
         HUDFinalStatsContainer.GetComponent<MoveNormal>().MoveRight();
+        HUDSelectPlanes.GetComponent<MoveNormal>().MoveDown();
+    }
+    public void SelectPlaneButton(int currentPlaneIndex)
+    {
+        audioManager.PlayMenuSound();
+
+        HUDSelectPlanes.GetComponent<MoveNormal>().MoveDown();
+        HUDPlayer.GetComponent<MoveNormal>().MoveLeft();
+
+        HUDPlayer.GetComponent<PlaneColor>().SetPlaneColor(currentPlaneIndex);
+        Player.GetComponent<PlaneColor>().SetPlaneColor(currentPlaneIndex);
     }
 
 }
