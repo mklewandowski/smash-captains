@@ -62,7 +62,7 @@ public class CharacterSelect : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             currentPlane = newPlaneIndex;
             Planes[currentPlane].SetActive(false);
             CurrentPlane.sprite = Planes[currentPlane].GetComponent<Image>().sprite;
-            PlaneName.text = Globals.GetPlaneNameFromColor((Globals.PlaneColor)currentPlane);
+            PlaneName.text = Globals.GetPlaneNameFromColor(Planes[currentPlane].GetComponent<CharacterSelectPlane>().PlaneColor);
         }
     }
 
@@ -73,6 +73,6 @@ public class CharacterSelect : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void SelectCurrentPlane()
     {
-        sceneManager.SelectPlaneButton(currentPlane);
+        sceneManager.SelectPlaneButton((int)Planes[currentPlane].GetComponent<CharacterSelectPlane>().PlaneColor);
     }
 }
