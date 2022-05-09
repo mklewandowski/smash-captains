@@ -19,7 +19,7 @@ public class CharacterSelect : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     float minX = 0;
     float maxX = 0;
-    int maxItems = 30;
+    int maxItems = 40;
     int currentPlane = 0;
     float planeInstanceXInterval = 250f;
     private float lastDragPos;
