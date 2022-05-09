@@ -51,6 +51,16 @@ public class Globals
         CandyCane,
         CheeseBroc,
         StrawberryBanana,
+        Pretzel,
+        Sherbet,
+        Rainbow,
+        Latte,
+        RootBeer,
+        Twinkie,
+        Neo,
+        Cocoa,
+        Grape,
+        Pickle,
         GreenTank
     }
 
@@ -102,11 +112,11 @@ public class Globals
         if (planeColor == Globals.PlaneColor.Yellow)
             planeName = "Smash Captain";
        else if (planeColor == Globals.PlaneColor.Red)
-            planeName = "Strawberry";
+            planeName = "Cherry Berry";
         else if (planeColor == Globals.PlaneColor.Orange)
             planeName = "Marmalade";
         else if (planeColor == Globals.PlaneColor.Blue)
-            planeName = "Blueberry";
+            planeName = "Blue Blast";
         else if (planeColor == Globals.PlaneColor.Pink)
             planeName = "Pitaya";
         else if (planeColor == Globals.PlaneColor.Berkeley)
@@ -114,7 +124,7 @@ public class Globals
         else if (planeColor == Globals.PlaneColor.BombPop)
             planeName = "Bomb Pop";
         else if (planeColor == Globals.PlaneColor.Burger)
-            planeName = "Burger";
+            planeName = "Pig Burger";
         else if (planeColor == Globals.PlaneColor.CandyCorn)
             planeName = "Candy Corn";
         else if (planeColor == Globals.PlaneColor.CheeseBurger)
@@ -126,7 +136,7 @@ public class Globals
         else if (planeColor == Globals.PlaneColor.IceCreamSandwich)
             planeName = "Ice Cream Sandwich";
         else if (planeColor == Globals.PlaneColor.Lime)
-            planeName = "Lime";
+            planeName = "Always Boring Lime";
         else if (planeColor == Globals.PlaneColor.Pizza)
             planeName = "Big Slice";
         else if (planeColor == Globals.PlaneColor.Pack)
@@ -136,7 +146,7 @@ public class Globals
         else if (planeColor == Globals.PlaneColor.Smores)
             planeName = "Smores";
         else if (planeColor == Globals.PlaneColor.Snow)
-            planeName = "Snowy Day";
+            planeName = "Snow Day";
         else if (planeColor == Globals.PlaneColor.Teal)
             planeName = "Concord";
         else if (planeColor == Globals.PlaneColor.Watermelon)
@@ -159,6 +169,26 @@ public class Globals
             planeName = "The Anna";
         else if (planeColor == Globals.PlaneColor.StrawberryBanana)
             planeName = "Strawberry Banana";
+        else if (planeColor == Globals.PlaneColor.Pretzel)
+            planeName = "Chocolate Covered Pretzel";
+        else if (planeColor == Globals.PlaneColor.Sherbet)
+            planeName = "Sherbet";
+        else if (planeColor == Globals.PlaneColor.Rainbow)
+            planeName = "Rainbow Taffy";
+        else if (planeColor == Globals.PlaneColor.Latte)
+            planeName = "Latte";
+        else if (planeColor == Globals.PlaneColor.RootBeer)
+            planeName = "Root Beer Float";
+        else if (planeColor == Globals.PlaneColor.Twinkie)
+            planeName = "Twinkie";
+        else if (planeColor == Globals.PlaneColor.Neo)
+            planeName = "Neopolitan";
+        else if (planeColor == Globals.PlaneColor.Cocoa)
+            planeName = "Cocoa";
+        else if (planeColor == Globals.PlaneColor.Grape)
+            planeName = "Always Awesome Grape";
+        else if (planeColor == Globals.PlaneColor.Pickle)
+            planeName = "Dill Pickle";
         return planeName;
     }
 }

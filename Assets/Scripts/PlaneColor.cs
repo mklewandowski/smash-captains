@@ -62,6 +62,26 @@ public class PlaneColor : MonoBehaviour
     GameObject CheeseBroc;
     [SerializeField]
     GameObject StrawberryBanana;
+    [SerializeField]
+    GameObject Pretzel;
+    [SerializeField]
+    GameObject Sherbet;
+    [SerializeField]
+    GameObject Rainbow;
+    [SerializeField]
+    GameObject Latte;
+    [SerializeField]
+    GameObject RootBeer;
+    [SerializeField]
+    GameObject Twinkie;
+    [SerializeField]
+    GameObject Neo;
+    [SerializeField]
+    GameObject Cocoa;
+    [SerializeField]
+    GameObject Grape;
+    [SerializeField]
+    GameObject Pickle;
 
     [SerializeField]
     GameObject GreenTank;
@@ -111,6 +131,16 @@ public class PlaneColor : MonoBehaviour
         CandyCane.SetActive(planeColor == Globals.PlaneColor.CandyCane);
         CheeseBroc.SetActive(planeColor == Globals.PlaneColor.CheeseBroc);
         StrawberryBanana.SetActive(planeColor == Globals.PlaneColor.StrawberryBanana);
+        Pretzel.SetActive(planeColor == Globals.PlaneColor.Pretzel);
+        Sherbet.SetActive(planeColor == Globals.PlaneColor.Sherbet);
+        Rainbow.SetActive(planeColor == Globals.PlaneColor.Rainbow);
+        Latte.SetActive(planeColor == Globals.PlaneColor.Latte);
+        RootBeer.SetActive(planeColor == Globals.PlaneColor.RootBeer);
+        Twinkie.SetActive(planeColor == Globals.PlaneColor.Twinkie);
+        Neo.SetActive(planeColor == Globals.PlaneColor.Neo);
+        Cocoa.SetActive(planeColor == Globals.PlaneColor.Cocoa);
+        Grape.SetActive(planeColor == Globals.PlaneColor.Grape);
+        Pickle.SetActive(planeColor == Globals.PlaneColor.Pickle);
 
         if (GreenTank != null) GreenTank.SetActive(planeColor == Globals.PlaneColor.GreenTank);
 
@@ -215,6 +245,26 @@ public class PlaneColor : MonoBehaviour
             currPlane = CheeseBroc;
         else if (currentPlaneColor == Globals.PlaneColor.StrawberryBanana)
             currPlane = StrawberryBanana;
+        else if (currentPlaneColor == Globals.PlaneColor.Pretzel)
+            currPlane = Pretzel;
+        else if (currentPlaneColor == Globals.PlaneColor.Sherbet)
+            currPlane = Sherbet;
+        else if (currentPlaneColor == Globals.PlaneColor.Rainbow)
+            currPlane = Rainbow;
+        else if (currentPlaneColor == Globals.PlaneColor.Latte)
+            currPlane = Latte;
+        else if (currentPlaneColor == Globals.PlaneColor.RootBeer)
+            currPlane = RootBeer;
+        else if (currentPlaneColor == Globals.PlaneColor.Twinkie)
+            currPlane = Twinkie;
+        else if (currentPlaneColor == Globals.PlaneColor.Neo)
+            currPlane = Neo;
+        else if (currentPlaneColor == Globals.PlaneColor.Cocoa)
+            currPlane = Cocoa;
+        else if (currentPlaneColor == Globals.PlaneColor.Grape)
+            currPlane = Grape;
+        else if (currentPlaneColor == Globals.PlaneColor.Pickle)
+            currPlane = Pickle;
 
         return currPlane;
     }
