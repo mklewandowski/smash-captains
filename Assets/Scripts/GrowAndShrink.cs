@@ -15,10 +15,33 @@ public class GrowAndShrink : MonoBehaviour
     float ShrinkTo = 1f;
     [SerializeField]
     float Rate = 7f;
+    [SerializeField]
+    float JuiceTime = 0f;
+
+    float timer;
+    bool useTimer = false;
+
+    void Start ()
+    {
+        useTimer = JuiceTime > 0;
+        timer = JuiceTime;
+    }
 
     // Update is called once per frame
     void Update ()
     {
+        if (state == JuicyState.Normal)
+        {
+            if (useTimer)
+            {
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    StartEffect();
+                    timer = JuiceTime;
+                }
+            }
+        }
         if (state == JuicyState.Grow)
         {
             float newScale = Mathf.Min(GrowTo, this.transform.localScale.x + Time.deltaTime * Rate);

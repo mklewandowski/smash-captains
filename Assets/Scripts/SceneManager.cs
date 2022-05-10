@@ -67,6 +67,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI HUDBestTime;
     [SerializeField]
+    GameObject HUDHighScore;
+    [SerializeField]
     TextMeshProUGUI HUDTotalDamage;
     [SerializeField]
     TextMeshProUGUI HUDTotalSmashes;
@@ -383,6 +385,11 @@ public class SceneManager : MonoBehaviour
         {
             Globals.BestTime = Globals.CurrentTime;
             Globals.SaveFloatToPlayerPrefs(Globals.BestTimePlayerPrefsKey, Globals.BestTime);
+            HUDHighScore.SetActive(true);
+        }
+        else
+        {
+            HUDHighScore.SetActive(false);
         }
         int finalMin = (int)Globals.CurrentTime / 60;
         float finalSec = Globals.CurrentTime - (finalMin * 60f);
