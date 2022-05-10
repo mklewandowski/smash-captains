@@ -6,6 +6,19 @@ Press the screen or hold space to give your wobbly plane thrust as you race to t
 
 ![Smash Captains gameplay](https://github.com/mklewandowski/smash-captains/blob/main/Assets/Images/smash-captains-gameplay.gif?raw=true)
 
+## Voxel Art
+
+Smash Captains contains 40 playable biplanes and additional in-game voxel art.  
+
+![Smash Captains planes](https://github.com/mklewandowski/smash-captains/blob/main/Assets/Images/smash-captains-planes.gif?raw=true)
+
+Voxel art is created using Magicavoxel. To add new voxel art to the project, do the following:
+- create asset model in Magicavoxel
+- export model as a .obj file (multiple files are exported, only the .obj file is needed)
+- import the .obj model file into Unity
+- change the material on the mesh renderer to `voxelMaterial.mat`
+- drop the model into a scene (scale and rotation might need to be adjusted)
+
 ## Supported Platforms
 Smash Captains is designed for use on multiple platforms including:
 - iOS
