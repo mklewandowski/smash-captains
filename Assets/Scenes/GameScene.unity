@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 100999937}
   - component: {fileID: 100999939}
   - component: {fileID: 100999938}
+  - component: {fileID: 100999940}
   m_Layer: 5
   m_Name: SpeedText
   m_TagString: Untagged
@@ -767,6 +768,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100999936}
   m_CullTransparentMesh: 1
+--- !u!114 &100999940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100999936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43faf5e170c83d4d9ae725ba19a28fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118883070
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +893,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -9869,6 +9882,7 @@ GameObject:
   - component: {fileID: 425376840}
   - component: {fileID: 425376842}
   - component: {fileID: 425376841}
+  - component: {fileID: 425376843}
   m_Layer: 5
   m_Name: InvincibleText
   m_TagString: Untagged
@@ -9992,6 +10006,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425376839}
   m_CullTransparentMesh: 1
+--- !u!114 &425376843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425376839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43faf5e170c83d4d9ae725ba19a28fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &444083572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27347,6 +27373,7 @@ GameObject:
   - component: {fileID: 1695177186}
   - component: {fileID: 1695177188}
   - component: {fileID: 1695177187}
+  - component: {fileID: 1695177189}
   m_Layer: 0
   m_Name: TimeText
   m_TagString: Untagged
@@ -27470,6 +27497,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695177185}
   m_CullTransparentMesh: 1
+--- !u!114 &1695177189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695177185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43faf5e170c83d4d9ae725ba19a28fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1714840741
 PrefabInstance:
   m_ObjectHideFlags: 0
