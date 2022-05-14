@@ -34,6 +34,11 @@ public class SettingsManager : MonoBehaviour
     {
         AudioButtonImage.sprite = Globals.AudioOn ? AudioOnSprite : AudioOffSprite;
         MusicButtonImage.sprite = Globals.MusicOn ? MusicOnSprite : MusicOffSprite;
+        MoodColor[] moodObjects = GameObject.FindObjectsOfType<MoodColor>(true);
+        for (int i = 0; i < moodObjects.Length; i++)
+        {
+            moodObjects[i].ToggleDayMode(Globals.DayMode);
+        }
         DayNightButtonImage.sprite = Globals.DayMode ? DaySprite : NightSprite;
         Camera.main.backgroundColor = Globals.DayMode ? new Color (114f/255f, 180f/255f, 246f/255f) : new Color (135f/255f, 67f/255f, 232f/255f);
     }
@@ -60,6 +65,12 @@ public class SettingsManager : MonoBehaviour
     {
         Globals.DayMode = !Globals.DayMode;
         audioManager.PlayMenuSound();
+        MoodColor[] moodObjects = GameObject.FindObjectsOfType<MoodColor>(true);
+        for (int i = 0; i < moodObjects.Length; i++)
+        {
+            moodObjects[i].ToggleDayMode(Globals.DayMode);
+        }
+
         DayNightButtonImage.sprite = Globals.DayMode ? DaySprite : NightSprite;
         Camera.main.backgroundColor = Globals.DayMode ? new Color (114f/255f, 180f/255f, 246f/255f) : new Color (135f/255f, 67f/255f, 232f/255f);
         Globals.SaveIntToPlayerPrefs(Globals.DayModePlayerPrefsKey, Globals.DayMode ? 1 : 0);
