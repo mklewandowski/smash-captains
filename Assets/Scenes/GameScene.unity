@@ -28332,6 +28332,7 @@ MonoBehaviour:
   MusicOffSprite: {fileID: 21300000, guid: 7ca535079676a4247ba5cdfbe7a3133f, type: 3}
   DaySprite: {fileID: 21300000, guid: 2cdd78e0f56cb5345be537f039d35cc4, type: 3}
   NightSprite: {fileID: 21300000, guid: 966a5465e891e944e85c997dce683c49, type: 3}
+  FireSprite: {fileID: 21300000, guid: 2b978461225cecc4db18cad6bffc1f57, type: 3}
 --- !u!114 &1786826859
 MonoBehaviour:
   m_ObjectHideFlags: 0
