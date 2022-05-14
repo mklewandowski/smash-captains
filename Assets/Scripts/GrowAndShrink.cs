@@ -66,4 +66,9 @@ public class GrowAndShrink : MonoBehaviour
     {
         state = JuicyState.Grow;
     }
+
+    public void StopEffect()
+    {
+        state = JuicyState.Normal;
+    }
 }

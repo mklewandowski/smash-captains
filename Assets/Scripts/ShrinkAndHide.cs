@@ -39,4 +39,9 @@ public class ShrinkAndHide : MonoBehaviour
     {
         state = JuicyState.Normal;
     }
+
+    public bool IsShrinking()
+    {
+        return (state == JuicyState.Shrink);
+    }
 }

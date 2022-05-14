@@ -150,15 +150,16 @@ public class PlaneColor : MonoBehaviour
     public void ChangeToTank()
     {
         TankFlash(false);
-        if (GreenTank.activeSelf)
+        if (GreenTank.activeSelf && !GreenTank.GetComponent<ShrinkAndHide>().IsShrinking())
             return;
 
+        GreenTank.GetComponent<ShrinkAndHide>().StopEffect();
         GreenTank.transform.localScale = new Vector3(.1f, .1f, .1f);
         GreenTank.SetActive(true);
         GreenTank.GetComponent<GrowAndShrink>().StartEffect();
 
         GameObject currPlane = GetCurrentPlane();
-
+        currPlane.GetComponent<GrowAndShrink>().StopEffect();
         currPlane.GetComponent<ShrinkAndHide>().StartEffect();
     }
 
@@ -175,10 +176,12 @@ public class PlaneColor : MonoBehaviour
             return;
 
         GameObject currPlane = GetCurrentPlane();
+        currPlane.GetComponent<ShrinkAndHide>().StopEffect();
         currPlane.transform.localScale = new Vector3(.1f, .1f, .1f);
         currPlane.SetActive(true);
         currPlane.GetComponent<GrowAndShrink>().StartEffect();
 
+        GreenTank.GetComponent<GrowAndShrink>().StopEffect();
         GreenTank.GetComponent<ShrinkAndHide>().StartEffect();
     }
 
