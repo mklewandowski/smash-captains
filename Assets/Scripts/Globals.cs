@@ -69,7 +69,12 @@ public class Globals
     public static bool MusicOn;
 
     // day night mode
-    public static bool DayMode = true;
+    public enum GameMood {
+        Day,
+        Night,
+        Fire,
+    }
+    public static GameMood Mood = GameMood.Day;
 
     // keep track of scoring
     public static float BestTime = 0;
@@ -84,7 +89,7 @@ public class Globals
     public const string MusicPlayerPrefsKey = "Music";
     public const string BestTimePlayerPrefsKey = "BestTime";
     public const string PlaneFlavorPlayerPrefsKey = "PlaneFlavor";
-    public const string DayModePlayerPrefsKey = "DayMode";
+    public const string GameMoodPlayerPrefsKey = "GameMood";
 
     public static void SaveIntToPlayerPrefs(string key, int val)
     {

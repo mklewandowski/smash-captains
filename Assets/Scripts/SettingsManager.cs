@@ -24,6 +24,8 @@ public class SettingsManager : MonoBehaviour
     Sprite DaySprite;
     [SerializeField]
     Sprite NightSprite;
+    [SerializeField]
+    Sprite FireSprite;
 
     void Awake()
     {
@@ -37,10 +39,14 @@ public class SettingsManager : MonoBehaviour
         MoodColor[] moodObjects = GameObject.FindObjectsOfType<MoodColor>(true);
         for (int i = 0; i < moodObjects.Length; i++)
         {
-            moodObjects[i].ToggleDayMode(Globals.DayMode);
+            moodObjects[i].UpdateGameMood(Globals.Mood);
         }
-        DayNightButtonImage.sprite = Globals.DayMode ? DaySprite : NightSprite;
-        Camera.main.backgroundColor = Globals.DayMode ? new Color (114f/255f, 180f/255f, 246f/255f) : new Color (135f/255f, 67f/255f, 232f/255f);
+        DayNightButtonImage.sprite = Globals.Mood == Globals.GameMood.Day
+            ? DaySprite
+            : Globals.Mood == Globals.GameMood.Night ? NightSprite : FireSprite;
+        Camera.main.backgroundColor = Globals.Mood == Globals.GameMood.Day
+            ? new Color (114f/255f, 180f/255f, 246f/255f)
+            : Globals.Mood == Globals.GameMood.Night ? new Color (87f/255f, 44f/255f, 153f/255f) : new Color (255f/255f, 110f/255f, 20f/255f);
     }
 
     public void SelectAudioButton()
@@ -63,16 +69,25 @@ public class SettingsManager : MonoBehaviour
     }
     public void SelectDayNightButton()
     {
-        Globals.DayMode = !Globals.DayMode;
+        if (Globals.Mood == Globals.GameMood.Day)
+            Globals.Mood = Globals.GameMood.Night;
+        else if (Globals.Mood == Globals.GameMood.Night)
+            Globals.Mood = Globals.GameMood.Fire;
+        else if (Globals.Mood == Globals.GameMood.Fire)
+            Globals.Mood = Globals.GameMood.Day;
         audioManager.PlayMenuSound();
         MoodColor[] moodObjects = GameObject.FindObjectsOfType<MoodColor>(true);
         for (int i = 0; i < moodObjects.Length; i++)
         {
-            moodObjects[i].ToggleDayMode(Globals.DayMode);
+            moodObjects[i].UpdateGameMood(Globals.Mood);
         }
 
-        DayNightButtonImage.sprite = Globals.DayMode ? DaySprite : NightSprite;
-        Camera.main.backgroundColor = Globals.DayMode ? new Color (114f/255f, 180f/255f, 246f/255f) : new Color (135f/255f, 67f/255f, 232f/255f);
-        Globals.SaveIntToPlayerPrefs(Globals.DayModePlayerPrefsKey, Globals.DayMode ? 1 : 0);
+        DayNightButtonImage.sprite = Globals.Mood == Globals.GameMood.Day
+            ? DaySprite
+            : Globals.Mood == Globals.GameMood.Night ? NightSprite : FireSprite;
+        Camera.main.backgroundColor = Globals.Mood == Globals.GameMood.Day
+            ? new Color (114f/255f, 180f/255f, 246f/255f)
+            : Globals.Mood == Globals.GameMood.Night ? new Color (87f/255f, 44f/255f, 153f/255f) : new Color (255f/255f, 110f/255f, 20f/255f);
+        Globals.SaveIntToPlayerPrefs(Globals.GameMoodPlayerPrefsKey, (int)Globals.Mood);
     }
 }

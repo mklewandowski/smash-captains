@@ -32,8 +32,8 @@ public class AudioManager : MonoBehaviour
         if (Globals.MusicOn)
             audioSource.Play();
 
-        int dayMode = Globals.LoadIntFromPlayerPrefs(Globals.DayModePlayerPrefsKey, 1);
-        Globals.DayMode = dayMode == 1 ? true : false;
+        int mood = Globals.LoadIntFromPlayerPrefs(Globals.GameMoodPlayerPrefsKey, 1);
+        Globals.Mood = (Globals.GameMood)mood;
 
         settingsManager = this.GetComponent<SettingsManager>();
         settingsManager.Init();
