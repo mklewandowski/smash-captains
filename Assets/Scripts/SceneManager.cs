@@ -291,7 +291,8 @@ public class SceneManager : MonoBehaviour
         audioManager.PlayStartSound();
 
         HUDGameOver.GetComponent<MoveNormal>().MoveUp();
-        HUDPlayer.GetComponent<MoveNormal>().MoveRight();
+        HUDPlayer.SetActive(false);
+        HUDPlayer.transform.localPosition = new Vector3(20f, HUDPlayer.transform.localPosition.y, HUDPlayer.transform.localPosition.z);
         HUDAbout.GetComponent<MoveNormal>().MoveRight();
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
         HUDTitle.GetComponent<MoveNormal>().MoveLeft();
@@ -472,6 +473,7 @@ public class SceneManager : MonoBehaviour
         audioManager.PlayMenuSound();
 
         HUDGameOver.GetComponent<MoveNormal>().MoveUp();
+        HUDPlayer.SetActive(true);
         HUDPlayer.GetComponent<MoveNormal>().MoveLeft();
         HUDTitle.GetComponent<MoveNormal>().MoveRight();
         HUDButtons.GetComponent<MoveNormal>().MoveUp();
