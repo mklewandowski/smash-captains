@@ -8,7 +8,7 @@ Press the screen or hold space to give your wobbly plane thrust as you race to t
 
 ## Voxel Art
 
-Smash Captains contains 40 playable biplanes and additional in-game voxel art.  
+Smash Captains contains 40 playable biplanes and additional in-game voxel art.
 
 ![Smash Captains planes](https://github.com/mklewandowski/smash-captains/blob/main/Assets/Images/smash-captains-planes.gif?raw=true)
 
@@ -29,11 +29,11 @@ Smash Captains is designed for use on multiple platforms including:
 ## Running Locally
 Use the following steps to run locally:
 1. Clone this repo
-2. Open repo folder using Unity 2020.3.10f.1
+2. Open repo folder using Unity 2021.3.0f.1
 3. Install Text Mesh Pro
 
 ## Development Tools
-- Created using Unity 2020.3.10f.1
+- Created using Unity 2021.3.0f.1
 - Code edited using Visual Studio Code
 - Voxel art made using [Magicavoxel](https://www.voxelmade.com/magicavoxel/)
 - Sounds created using [Bfxr](https://www.bfxr.net/)
