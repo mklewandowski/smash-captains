@@ -40,7 +40,7 @@ public class Debris : MonoBehaviour
         this.gameObject.SetActive (true);
     }
 
-    void StopUse()
+    public void StopUse()
     {
         InUse = false;
         this.gameObject.SetActive (false);

@@ -11,6 +11,8 @@ public class SceneManager : MonoBehaviour
     GameObject Player;
     [SerializeField]
     SmokeManager smokeManager;
+    [SerializeField]
+    DebrisManager debrisManager;
 
     [SerializeField]
     GameObject Level;
@@ -35,6 +37,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject HUDSelectPlanes;
 
+    [SerializeField]
+    GameObject HUDQuit;
     [SerializeField]
     GameObject HUDRaceReady;
     [SerializeField]
@@ -125,7 +129,7 @@ public class SceneManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Globals.CurrentGameState == Globals.GameState.Playing || Globals.CurrentGameState == Globals.GameState.ShowScore)
+        if (Globals.CurrentGameState == Globals.GameState.Ready || Globals.CurrentGameState == Globals.GameState.Playing || Globals.CurrentGameState == Globals.GameState.ShowScore)
         {
             Vector2 cloudMovement = new Vector2 (Globals.ScrollSpeed.x * Globals.ScrollDirection.x * .45f, 0);
             for (int i = 0; i < Clouds.Length; i++)
@@ -287,7 +291,7 @@ public class SceneManager : MonoBehaviour
         audioManager.PlayStartSound();
 
         HUDGameOver.GetComponent<MoveNormal>().MoveUp();
-        HUDPlayer.SetActive(false);
+        HUDPlayer.GetComponent<MoveNormal>().MoveRight();
         HUDAbout.GetComponent<MoveNormal>().MoveRight();
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
         HUDTitle.GetComponent<MoveNormal>().MoveLeft();
@@ -300,6 +304,7 @@ public class SceneManager : MonoBehaviour
         Globals.CurrentTime = 0;
         HUDTimeText.text = "0:00.00";
         HUDTime.SetActive(true);
+        HUDQuit.SetActive(true);
         HUDSpeed.SetActive(true);
         HUDTrackProgress.SetActive(true);
 
@@ -461,6 +466,44 @@ public class SceneManager : MonoBehaviour
 
         HUDPlayer.GetComponent<PlaneColor>().SetPlaneColor(currentPlaneIndex);
         Player.GetComponent<PlaneColor>().SetPlaneColor(currentPlaneIndex);
+    }
+    public void SelectQuitButton()
+    {
+        audioManager.PlayMenuSound();
+
+        HUDGameOver.GetComponent<MoveNormal>().MoveUp();
+        HUDPlayer.GetComponent<MoveNormal>().MoveLeft();
+        HUDTitle.GetComponent<MoveNormal>().MoveRight();
+        HUDButtons.GetComponent<MoveNormal>().MoveUp();
+        Level.SetActive(false);
+        Player.SetActive(false);
+
+        HUDTime.SetActive(false);
+        HUDQuit.SetActive(false);
+        HUDSpeed.SetActive(false);
+        HUDTrackProgress.SetActive(false);
+        BombFlash.SetActive(false);
+        HUDRaceReady.SetActive(false);
+
+        Globals.ScrollSpeed = new Vector2(0, 0);
+        Player.transform.localPosition = new Vector3(Player.transform.localPosition.x, -3f, Player.transform.localPosition.z);
+        Player.GetComponent<PlaneColor>().RestorePlaneColor();
+
+        SmashEnemy[] smashEnemies = GameObject.FindObjectsOfType<SmashEnemy>(true);
+        for (int i = 0; i < smashEnemies.Length; i++)
+        {
+            Destroy(smashEnemies[i].gameObject);
+        }
+        SmashPowerup[] smashPowerups = GameObject.FindObjectsOfType<SmashPowerup>(true);
+        for (int i = 0; i < smashPowerups.Length; i++)
+        {
+            Destroy(smashPowerups[i].gameObject);
+        }
+
+        smokeManager.StopAll();
+        debrisManager.StopAll();
+
+        Globals.CurrentGameState = Globals.GameState.TitleScreen;
     }
 
 }

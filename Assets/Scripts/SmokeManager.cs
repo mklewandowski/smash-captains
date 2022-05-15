@@ -20,7 +20,8 @@ public class SmokeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int x = 0; x < smokePool.Length; x++) {
+        for (int x = 0; x < smokePool.Length; x++)
+        {
             smokePool[x] = (GameObject)Instantiate (SmokePrefab, new Vector3 (100f, 100f, 100f), Quaternion.identity, SmokeContainer.transform);
             smokeScripts[x] = smokePool[x].GetComponent<Smoke>();
         }
@@ -69,5 +70,13 @@ public class SmokeManager : MonoBehaviour
     public void SpeedUp()
     {
         speedTimer = speedTimerMax;
+    }
+
+    public void StopAll()
+    {
+        for (int x = 0; x < smokeScripts.Length; x++)
+        {
+            smokeScripts[x].StopUse();
+        }
     }
 }

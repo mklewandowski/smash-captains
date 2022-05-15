@@ -14,7 +14,8 @@ public class DebrisManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int x = 0; x < debrisPool.Length; x++) {
+        for (int x = 0; x < debrisPool.Length; x++)
+        {
             debrisPool[x] = (GameObject)Instantiate (DebrisPrefab, new Vector3 (100f, 100f, 100f), Quaternion.identity, DebrisContainer.transform);
             debrisScripts[x] = debrisPool[x].GetComponent<Debris>();
         }
@@ -32,6 +33,14 @@ public class DebrisManager : MonoBehaviour
             }
             if (count >= amount)
                 break;
+        }
+    }
+
+    public void StopAll()
+    {
+        for (int x = 0; x < debrisScripts.Length; x++)
+        {
+            debrisScripts[x].StopUse();
         }
     }
 }

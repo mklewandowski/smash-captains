@@ -3,7 +3,7 @@ using UnityEngine;
 public class Globals
 {
     // game scroll speed
-    public static Vector2 ScrollSpeed = new Vector2(6f, 0);
+    public static Vector2 ScrollSpeed = new Vector2(0, 0);
     public static float minSpeed = 4f;
     public static float maxSpeed = 16f;
     public static float finishLineXPos = 800f;
