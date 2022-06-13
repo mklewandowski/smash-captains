@@ -437,6 +437,7 @@ public class SceneManager : MonoBehaviour
         HUDAbout.GetComponent<MoveNormal>().MoveRight();
         HUDSettings.GetComponent<MoveNormal>().MoveRight();
         HUDFinalStatsContainer.GetComponent<MoveNormal>().MoveRight();
+        HUDButtons.GetComponent<MoveNormal>().MoveDown();
     }
     public void SelectAboutButton()
     {
@@ -464,6 +465,7 @@ public class SceneManager : MonoBehaviour
 
         HUDSelectPlanes.GetComponent<MoveNormal>().MoveDown();
         HUDPlayer.GetComponent<MoveNormal>().MoveLeft();
+        HUDButtons.GetComponent<MoveNormal>().MoveUp();
 
         HUDPlayer.GetComponent<PlaneColor>().SetPlaneColor(currentPlaneIndex);
         Player.GetComponent<PlaneColor>().SetPlaneColor(currentPlaneIndex);
