@@ -45,7 +45,7 @@ public class SettingsManager : MonoBehaviour
             ? DaySprite
             : Globals.Mood == Globals.GameMood.Night ? NightSprite : FireSprite;
         Camera.main.backgroundColor = Globals.Mood == Globals.GameMood.Day
-            ? new Color (114f/255f, 180f/255f, 246f/255f)
+            ? new Color (50f/255f, 116f/255f, 226f/255f)
             : Globals.Mood == Globals.GameMood.Night ? new Color (87f/255f, 44f/255f, 153f/255f) : new Color (255f/255f, 110f/255f, 20f/255f);
     }
 
@@ -86,7 +86,7 @@ public class SettingsManager : MonoBehaviour
             ? DaySprite
             : Globals.Mood == Globals.GameMood.Night ? NightSprite : FireSprite;
         Camera.main.backgroundColor = Globals.Mood == Globals.GameMood.Day
-            ? new Color (114f/255f, 180f/255f, 246f/255f)
+            ? new Color (50f/255f, 116f/255f, 226f/255f)
             : Globals.Mood == Globals.GameMood.Night ? new Color (87f/255f, 44f/255f, 153f/255f) : new Color (255f/255f, 110f/255f, 20f/255f);
         Globals.SaveIntToPlayerPrefs(Globals.GameMoodPlayerPrefsKey, (int)Globals.Mood);
     }
