@@ -488,6 +488,7 @@ public class SceneManager : MonoBehaviour
         HUDTrackProgress.SetActive(false);
         BombFlash.SetActive(false);
         HUDRaceReady.SetActive(false);
+        InvincibleMessage.SetActive(false);
 
         Globals.ScrollSpeed = new Vector2(0, 0);
         Player.transform.localPosition = new Vector3(Player.transform.localPosition.x, -3f, Player.transform.localPosition.z);
