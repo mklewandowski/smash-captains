@@ -33,6 +33,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField]
     GameObject HUDTitle;
     [SerializeField]
+    GameObject HUDClouds;
+    [SerializeField]
     GameObject HUDButtons;
     [SerializeField]
     GameObject HUDSelectPlanes;
@@ -298,6 +300,7 @@ public class SceneManager : MonoBehaviour
         HUDTitle.GetComponent<MoveNormal>().MoveLeft();
         HUDButtons.GetComponent<MoveNormal>().MoveDown();
         HUDSelectPlanes.GetComponent<MoveNormal>().MoveDown();
+        HUDClouds.SetActive(false);
         Level.SetActive(true);
         Player.SetActive(true);
 
@@ -481,6 +484,7 @@ public class SceneManager : MonoBehaviour
         HUDButtons.GetComponent<MoveNormal>().MoveUp();
         Level.SetActive(false);
         Player.SetActive(false);
+        HUDClouds.SetActive(true);
 
         HUDTime.SetActive(false);
         HUDQuit.SetActive(false);

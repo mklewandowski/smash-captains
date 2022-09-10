@@ -13,6 +13,8 @@ public class CharacterSelect : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     Image CurrentPlane;
     [SerializeField]
     TextMeshProUGUI PlaneName;
+    [SerializeField]
+    TextMeshProUGUI PlaneNameBack;
 
     [SerializeField]
     Transform DragContainer;
@@ -63,6 +65,7 @@ public class CharacterSelect : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             Planes[currentPlane].SetActive(false);
             CurrentPlane.sprite = Planes[currentPlane].GetComponent<Image>().sprite;
             PlaneName.text = Globals.GetPlaneNameFromColor(Planes[currentPlane].GetComponent<CharacterSelectPlane>().PlaneColor);
+            PlaneNameBack.text = PlaneName.text;
         }
     }
 
