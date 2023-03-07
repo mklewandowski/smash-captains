@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
         if (Globals.MusicOn)
             audioSource.Play();
 
-        int mood = Globals.LoadIntFromPlayerPrefs(Globals.GameMoodPlayerPrefsKey, 1);
+        int mood = Globals.LoadIntFromPlayerPrefs(Globals.GameMoodPlayerPrefsKey, 0);
         Globals.Mood = (Globals.GameMood)mood;
 
         settingsManager = this.GetComponent<SettingsManager>();
